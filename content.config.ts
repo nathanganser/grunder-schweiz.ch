@@ -1,145 +1,133 @@
 import { defineCollection, z } from '@nuxt/content'
 
-const variantEnum = z.enum(['solid', 'outline', 'subtle', 'soft', 'ghost', 'link'])
-const colorEnum = z.enum(['primary', 'secondary', 'neutral', 'error', 'warning', 'success', 'info'])
-const sizeEnum = z.enum(['xs', 'sm', 'md', 'lg', 'xl'])
-const orientationEnum = z.enum(['vertical', 'horizontal'])
-
-const createBaseSchema = () => z.object({
-  title: z.string().nonempty(),
-  description: z.string().nonempty()
+const toolSchema = z.object({
+  name: z.string().nonempty(),
+  slug: z.string().nonempty(),
+  vendor: z.string().nonempty(),
+  url: z.string().nonempty(),
+  verdict: z.string().nonempty(),
+  bestFor: z.string().nonempty(),
+  priceSummary: z.string().nonempty(),
+  swissFit: z.string().nonempty()
 })
 
-const createFeatureItemSchema = () => createBaseSchema().extend({
+const categorySchema = z.object({
+  slug: z.string().nonempty(),
+  title: z.string().nonempty(),
+  intro: z.string().nonempty(),
+  audience: z.string().nonempty(),
+  primaryCta: z.string().nonempty(),
   icon: z.string().nonempty().editor({ input: 'icon' })
 })
 
-const createLinkSchema = () => z.object({
-  label: z.string().nonempty(),
+const authorSchema = z.object({
+  name: z.string().nonempty(),
   to: z.string().nonempty(),
-  icon: z.string().optional().editor({ input: 'icon' }),
-  size: sizeEnum.optional(),
-  trailing: z.boolean().optional(),
-  target: z.string().optional(),
-  color: colorEnum.optional(),
-  variant: variantEnum.optional()
-})
-
-const createImageSchema = () => z.object({
-  src: z.string().nonempty().editor({ input: 'media' }),
-  alt: z.string().optional(),
-  loading: z.enum(['lazy', 'eager']).optional(),
-  srcset: z.string().optional()
+  avatar: z.object({
+    src: z.string().nonempty().editor({ input: 'media' })
+  })
 })
 
 export const collections = {
-  index: defineCollection({
-    source: '0.index.yml',
-    type: 'page',
-    schema: z.object({
-      hero: z.object(({
-        links: z.array(createLinkSchema())
-      })),
-      sections: z.array(
-        createBaseSchema().extend({
-          id: z.string().nonempty(),
-          orientation: orientationEnum.optional(),
-          reverse: z.boolean().optional(),
-          features: z.array(createFeatureItemSchema())
-        })
-      ),
-      features: createBaseSchema().extend({
-        items: z.array(createFeatureItemSchema())
-      }),
-      testimonials: createBaseSchema().extend({
-        headline: z.string().optional(),
-        items: z.array(
-          z.object({
-            quote: z.string().nonempty(),
-            user: z.object({
-              name: z.string().nonempty(),
-              description: z.string().nonempty(),
-              to: z.string().nonempty(),
-              target: z.string().nonempty(),
-              avatar: createImageSchema()
-            })
-          })
-        )
-      }),
-      cta: createBaseSchema().extend({
-        links: z.array(createLinkSchema())
-      })
-    })
-  }),
-  docs: defineCollection({
-    source: '1.docs/**/*',
-    type: 'page'
-  }),
-  pricing: defineCollection({
-    source: '2.pricing.yml',
-    type: 'page',
-    schema: z.object({
-      plans: z.array(
-        z.object({
-          title: z.string().nonempty(),
-          description: z.string().nonempty(),
-          price: z.object({
-            month: z.string().nonempty(),
-            year: z.string().nonempty()
-          }),
-          billing_period: z.string().nonempty(),
-          billing_cycle: z.string().nonempty(),
-          button: createLinkSchema(),
-          features: z.array(z.string().nonempty()),
-          highlight: z.boolean().optional()
-        })
-      ),
-      logos: z.object({
-        title: z.string().nonempty(),
-        icons: z.array(z.string())
-      }),
-      faq: createBaseSchema().extend({
-        items: z.array(
-          z.object({
-            label: z.string().nonempty(),
-            content: z.string().nonempty()
-          })
-        )
-      })
-    })
-  }),
   blog: defineCollection({
     source: '3.blog.yml',
     type: 'page'
   }),
-  posts: defineCollection({
+  articles: defineCollection({
     source: '3.blog/**/*',
     type: 'page',
     schema: z.object({
-      image: z.object({ src: z.string().nonempty().editor({ input: 'media' }) }),
-      authors: z.array(
-        z.object({
-          name: z.string().nonempty(),
-          to: z.string().nonempty(),
-          avatar: z.object({ src: z.string().nonempty().editor({ input: 'media' }) })
-        })
-      ),
+      title: z.string().nonempty(),
+      description: z.string().nonempty(),
+      image: z.object({
+        src: z.string().nonempty().editor({ input: 'media' })
+      }),
+      authors: z.array(authorSchema),
       date: z.date(),
-      badge: z.object({ label: z.string().nonempty() })
+      badge: z.object({
+        label: z.string().nonempty()
+      })
     })
   }),
-  changelog: defineCollection({
-    source: '4.changelog.yml',
-    type: 'page'
-  }),
-  versions: defineCollection({
-    source: '4.changelog/**/*',
+  rankings: defineCollection({
+    source: '5.bestenlisten/**/*',
     type: 'page',
     schema: z.object({
       title: z.string().nonempty(),
-      description: z.string(),
-      date: z.date(),
-      image: z.string()
+      description: z.string().nonempty(),
+      category: z.string().nonempty(),
+      summary: z.string().nonempty(),
+      methodologyNote: z.string().nonempty(),
+      disclosureText: z.string().nonempty(),
+      topPick: toolSchema,
+      runnerUps: z.array(toolSchema),
+      evaluationCriteria: z.array(z.string().nonempty())
+    })
+  }),
+  reviews: defineCollection({
+    source: '6.reviews/**/*',
+    type: 'page',
+    schema: z.object({
+      title: z.string().nonempty(),
+      description: z.string().nonempty(),
+      tool_name: z.string().nonempty(),
+      vendor: z.string().nonempty(),
+      category: z.string().nonempty(),
+      pricing_summary: z.string().nonempty(),
+      best_for: z.string().nonempty(),
+      swiss_fit: z.string().nonempty(),
+      last_reviewed: z.date(),
+      affiliate_url: z.string().nonempty(),
+      disclosure_text: z.string().nonempty(),
+      pros: z.array(z.string().nonempty()),
+      cons: z.array(z.string().nonempty()),
+      features: z.array(z.string().nonempty())
+    })
+  }),
+  methodology: defineCollection({
+    source: '8.methodik.md',
+    type: 'page',
+    schema: z.object({
+      title: z.string().nonempty(),
+      description: z.string().nonempty(),
+      lastUpdated: z.date(),
+      disclosureSummary: z.string().nonempty(),
+      criteria: z.array(z.string().nonempty()),
+      sources: z.array(z.object({
+        label: z.string().nonempty(),
+        to: z.string().nonempty()
+      }))
+    })
+  }),
+  legal: defineCollection({
+    source: '7.legal/**/*',
+    type: 'page',
+    schema: z.object({
+      title: z.string().nonempty(),
+      description: z.string().nonempty()
+    })
+  }),
+  categories: defineCollection({
+    source: '9.kategorien.yml',
+    type: 'page',
+    schema: z.object({
+      title: z.string().nonempty(),
+      description: z.string().nonempty(),
+      items: z.array(categorySchema)
+    })
+  }),
+  comparisons: defineCollection({
+    source: '10.vergleiche/**/*',
+    type: 'page',
+    schema: z.object({
+      title: z.string().nonempty(),
+      description: z.string().nonempty(),
+      compared_tools: z.array(z.string().nonempty()),
+      winner_by_use_case: z.array(z.object({
+        useCase: z.string().nonempty(),
+        winner: z.string().nonempty(),
+        reason: z.string().nonempty()
+      }))
     })
   })
 }

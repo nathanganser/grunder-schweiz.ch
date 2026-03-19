@@ -1,124 +1,86 @@
 <script setup lang="ts">
 const columns = [{
-  label: 'Resources',
+  label: 'Inhalte',
   children: [{
-    label: 'Help center'
+    label: 'Kategorien',
+    to: '/kategorien'
   }, {
-    label: 'Docs'
+    label: 'Bestenlisten',
+    to: '/bestenlisten'
   }, {
-    label: 'Roadmap'
+    label: 'Reviews',
+    to: '/reviews'
   }, {
-    label: 'Changelog'
+    label: 'Ratgeber',
+    to: '/blog'
   }]
 }, {
-  label: 'Features',
+  label: 'Transparenz',
   children: [{
-    label: 'Affiliates'
+    label: 'Methodik',
+    to: '/methodik'
   }, {
-    label: 'Portal'
+    label: 'Affiliate-Hinweis',
+    to: '/legal/affiliate-disclosure'
   }, {
-    label: 'Jobs'
+    label: 'Impressum',
+    to: '/legal/impressum'
   }, {
-    label: 'Sponsors'
+    label: 'Datenschutz',
+    to: '/legal/datenschutz'
   }]
 }, {
-  label: 'Company',
+  label: 'Themen',
   children: [{
-    label: 'About'
+    label: 'Rechnungen',
+    to: '/bestenlisten'
   }, {
-    label: 'Pricing'
+    label: 'Buchhaltung',
+    to: '/bestenlisten'
   }, {
-    label: 'Careers'
-  }, {
-    label: 'Blog'
+    label: 'MWST',
+    to: '/blog'
   }]
 }]
-
-const toast = useToast()
-
-const email = ref('')
-const loading = ref(false)
-
-function onSubmit() {
-  loading.value = true
-
-  toast.add({
-    title: 'Subscribed!',
-    description: 'You\'ve been subscribed to our newsletter.'
-  })
-}
 </script>
 
 <template>
-  <USeparator
-    icon="i-simple-icons-nuxtdotjs"
-    class="h-px"
-  />
-
-  <UFooter :ui="{ top: 'border-b border-default' }">
+  <UFooter :ui="{ top: 'border-b border-default/80' }">
     <template #top>
       <UContainer>
-        <UFooterColumns :columns="columns">
-          <template #right>
-            <form @submit.prevent="onSubmit">
-              <UFormField
-                name="email"
-                label="Subscribe to our newsletter"
-                size="lg"
-              >
-                <UInput
-                  v-model="email"
-                  type="email"
-                  class="w-full"
-                  placeholder="Enter your email"
-                >
-                  <template #trailing>
-                    <UButton
-                      type="submit"
-                      size="xs"
-                      color="neutral"
-                      label="Subscribe"
-                    />
-                  </template>
-                </UInput>
-              </UFormField>
-            </form>
-          </template>
-        </UFooterColumns>
+        <div class="grid gap-8 py-4 lg:grid-cols-[0.9fr_1.1fr]">
+          <div class="space-y-3">
+            <p class="text-sm font-medium uppercase tracking-[0.24em] text-muted">
+              Gründer Schweiz
+            </p>
+            <h2 class="font-display text-2xl font-semibold tracking-tight text-highlighted">
+              Ein sachliches Verzeichnis fuer Schweizer Freelancer-Software.
+            </h2>
+            <p class="max-w-xl text-sm leading-6 text-muted">
+              Keine Produktvermarktung, sondern Kategorien, Rankings, Guides, Reviews und klare Methodik.
+            </p>
+          </div>
+
+          <UFooterColumns :columns="columns" />
+        </div>
       </UContainer>
     </template>
 
     <template #left>
-      <p class="text-muted text-sm">
-        Built with Nuxt UI • © {{ new Date().getFullYear() }}
-      </p>
+      <div class="space-y-1">
+        <p class="text-sm font-medium text-highlighted">
+          Gründer Schweiz
+        </p>
+        <p class="text-sm text-muted">
+          Fuer Schweizer Selbststaendige, die ein brauchbares Repository statt einer Marketingseite suchen.
+        </p>
+      </div>
     </template>
 
     <template #right>
-      <UButton
-        to="https://go.nuxt.com/discord"
-        target="_blank"
-        icon="i-simple-icons-discord"
-        aria-label="Nuxt on Discord"
-        color="neutral"
-        variant="ghost"
-      />
-      <UButton
-        to="https://go.nuxt.com/x"
-        target="_blank"
-        icon="i-simple-icons-x"
-        aria-label="Nuxt on X"
-        color="neutral"
-        variant="ghost"
-      />
-      <UButton
-        to="https://github.com/nuxt-ui-templates/saas"
-        target="_blank"
-        icon="i-simple-icons-github"
-        aria-label="Nuxt UI on GitHub"
-        color="neutral"
-        variant="ghost"
-      />
+      <p class="text-sm text-muted">
+        © {{ new Date().getFullYear() }} Gründer Schweiz
+      </p>
     </template>
   </UFooter>
 </template>

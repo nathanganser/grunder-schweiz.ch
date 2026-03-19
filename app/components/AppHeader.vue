@@ -2,85 +2,72 @@
 const route = useRoute()
 
 const items = computed(() => [{
-  label: 'Docs',
-  to: '/docs',
-  active: route.path.startsWith('/docs')
+  label: 'Kategorien',
+  to: '/kategorien',
+  active: route.path.startsWith('/kategorien')
 }, {
-  label: 'Pricing',
-  to: '/pricing'
+  label: 'Bestenlisten',
+  to: '/bestenlisten',
+  active: route.path.startsWith('/bestenlisten')
 }, {
-  label: 'Blog',
-  to: '/blog'
+  label: 'Reviews',
+  to: '/reviews',
+  active: route.path.startsWith('/reviews')
 }, {
-  label: 'Changelog',
-  to: '/changelog'
+  label: 'Methodik',
+  to: '/methodik',
+  active: route.path.startsWith('/methodik')
+}, {
+  label: 'Ratgeber',
+  to: '/blog',
+  active: route.path.startsWith('/blog')
 }])
 </script>
 
 <template>
-  <UHeader>
+  <UHeader class="border-b border-default/70 bg-default/85 backdrop-blur supports-[backdrop-filter]:bg-default/75">
     <template #left>
-      <NuxtLink to="/">
-        <AppLogo class="w-auto h-6 shrink-0" />
+      <NuxtLink
+        to="/"
+        class="flex items-center gap-3"
+      >
+        <AppLogo class="w-8 h-8 shrink-0" />
+
+        <div class="hidden sm:flex flex-col leading-tight">
+          <span class="font-display text-sm font-semibold tracking-tight text-highlighted">
+            Gründer Schweiz
+          </span>
+          <span class="text-xs text-muted">
+            Repository und Guide fuer Schweizer Freelancer-Software
+          </span>
+        </div>
       </NuxtLink>
-      <TemplateMenu />
     </template>
 
     <UNavigationMenu
       :items="items"
       variant="link"
+      class="hidden xl:flex"
     />
 
     <template #right>
       <UColorModeButton />
-
-      <UButton
-        icon="i-lucide-log-in"
-        color="neutral"
-        variant="ghost"
-        to="/login"
-        class="lg:hidden"
-      />
-
-      <UButton
-        label="Sign in"
-        color="neutral"
-        variant="outline"
-        to="/login"
-        class="hidden lg:inline-flex"
-      />
-
-      <UButton
-        label="Sign up"
-        color="neutral"
-        trailing-icon="i-lucide-arrow-right"
-        class="hidden lg:inline-flex"
-        to="/signup"
-      />
     </template>
 
     <template #body>
+      <div class="rounded-2xl border border-default bg-elevated/70 p-4 mb-6">
+        <p class="text-sm font-medium text-highlighted">
+          Redaktioneller Einstieg
+        </p>
+        <p class="mt-1 text-sm text-muted">
+          Kategorien, Guides, Reviews und transparente Einordnung fuer Schweizer Selbststaendige.
+        </p>
+      </div>
+
       <UNavigationMenu
         :items="items"
         orientation="vertical"
         class="-mx-2.5"
-      />
-
-      <USeparator class="my-6" />
-
-      <UButton
-        label="Sign in"
-        color="neutral"
-        variant="subtle"
-        to="/login"
-        block
-        class="mb-3"
-      />
-      <UButton
-        label="Sign up"
-        color="neutral"
-        to="/signup"
-        block
       />
     </template>
   </UHeader>

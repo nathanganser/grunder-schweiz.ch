@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const { data: post } = await useAsyncData(route.path, () => queryCollection('posts').path(route.path).first())
+const { data: post } = await useAsyncData(route.path, () => queryCollection('articles').path(route.path).first())
 if (!post.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Post not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Artikel nicht gefunden', fatal: true })
 }
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
-  return queryCollectionItemSurroundings('posts', route.path, {
+  return queryCollectionItemSurroundings('articles', route.path, {
     fields: ['description']
   })
 })
@@ -21,20 +21,13 @@ useSeoMeta({
   description,
   ogDescription: description
 })
-
-if (post.value.image?.src) {
-  defineOgImage({
-    url: post.value.image.src
-  })
-} else {
-  defineOgImageComponent('Saas', {
-    headline: 'Blog'
-  })
-}
 </script>
 
 <template>
-  <UContainer v-if="post">
+  <UContainer
+    v-if="post"
+    class="py-12"
+  >
     <UPageHeader
       :title="post.title"
       :description="post.description"
@@ -45,17 +38,16 @@ if (post.value.image?.src) {
           variant="subtle"
         />
         <span class="text-muted">&middot;</span>
-        <time class="text-muted">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
+        <time class="text-muted">{{ new Date(post.date).toLocaleDateString('de-CH', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
       </template>
 
-      <div class="flex flex-wrap items-center gap-3 mt-4">
+      <div class="mt-4 flex flex-wrap items-center gap-3">
         <UButton
           v-for="(author, index) in post.authors"
           :key="index"
           :to="author.to"
           color="neutral"
           variant="subtle"
-          target="_blank"
           size="sm"
         >
           <UAvatar
@@ -71,10 +63,7 @@ if (post.value.image?.src) {
 
     <UPage>
       <UPageBody>
-        <ContentRenderer
-          v-if="post"
-          :value="post"
-        />
+        <ContentRenderer :value="post" />
 
         <USeparator v-if="surround?.length" />
 

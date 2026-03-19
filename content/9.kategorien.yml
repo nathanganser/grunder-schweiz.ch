@@ -1,0 +1,27 @@
+title: Kategorien
+description: Die wichtigsten Software-Bereiche fuer Schweizer Selbststaendige im Ueberblick.
+items:
+  - slug: rechnungen
+    title: Rechnungssoftware
+    intro: Tools fuer Offerten, Rechnungen, Status und Zahlungsfluss.
+    audience: Freelancer, Berater, Agenturen, kleine Service-Teams
+    primaryCta: Bestenliste ansehen
+    icon: i-lucide-receipt-text
+  - slug: buchhaltung
+    title: Buchhaltungssoftware
+    intro: Software fuer Struktur, Nachvollziehbarkeit, Belege und Monatsablauf.
+    audience: Einzelunternehmen und kleine Teams
+    primaryCta: Buchhaltung vergleichen
+    icon: i-lucide-book-open-text
+  - slug: banking
+    title: Geschaeftskonten
+    intro: Konten und Zahlungswege fuer Selbststaendige mit Fokus auf Alltagstauglichkeit.
+    audience: Solo-Selbstaendige und kleine Firmen
+    primaryCta: Konten pruefen
+    icon: i-lucide-building-2
+  - slug: zeiterfassung
+    title: Zeiterfassung
+    intro: Tools fuer abrechenbare Zeit, Nachweise und bessere Projektuebersicht.
+    audience: Freelancer mit Stundenmodellen und Agenturen
+    primaryCta: Zeittools vergleichen
+    icon: i-lucide-timer

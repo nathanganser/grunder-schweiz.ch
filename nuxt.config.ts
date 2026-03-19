@@ -16,7 +16,13 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    '/docs': { redirect: '/docs/getting-started', prerender: false }
+    '/pricing': { redirect: '/methodik' },
+    '/login': { redirect: '/' },
+    '/signup': { redirect: '/' },
+    '/docs': { redirect: '/' },
+    '/docs/**': { redirect: '/' },
+    '/changelog': { redirect: '/bestenlisten' },
+    '/changelog/**': { redirect: '/bestenlisten' }
   },
 
   compatibilityDate: '2024-07-11',

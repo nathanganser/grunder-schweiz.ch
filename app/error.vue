@@ -10,34 +10,31 @@ defineProps({
 
 useHead({
   htmlAttrs: {
-    lang: 'en'
+    lang: 'de-CH'
   }
 })
 
 useSeoMeta({
-  title: 'Page not found',
-  description: 'We are sorry but this page could not be found.'
-})
-
-const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'), {
-  transform: data => data.find(item => item.path === '/docs')?.children || []
-})
-const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
-  server: false
+  title: 'Seite nicht gefunden',
+  description: 'Die angeforderte Seite konnte nicht gefunden werden.'
 })
 
 const links = [{
-  label: 'Docs',
-  icon: 'i-lucide-book',
-  to: '/docs/getting-started'
+  label: 'Startseite',
+  icon: 'i-lucide-house',
+  to: '/'
 }, {
-  label: 'Pricing',
-  icon: 'i-lucide-credit-card',
-  to: '/pricing'
+  label: 'Bestenlisten',
+  icon: 'i-lucide-list',
+  to: '/bestenlisten'
 }, {
-  label: 'Blog',
-  icon: 'i-lucide-pencil',
+  label: 'Ratgeber',
+  icon: 'i-lucide-newspaper',
   to: '/blog'
+}, {
+  label: 'Methodik',
+  icon: 'i-lucide-badge-info',
+  to: '/methodik'
 }]
 </script>
 
@@ -45,25 +42,37 @@ const links = [{
   <div>
     <AppHeader />
 
-    <UMain>
-      <UContainer>
-        <UPage>
-          <UError :error="error" />
-        </UPage>
+    <UMain class="py-16">
+      <UContainer class="max-w-3xl">
+        <div class="rounded-3xl border border-default bg-default/80 p-8 shadow-sm">
+          <UBadge
+            label="404"
+            color="neutral"
+            variant="subtle"
+            class="mb-4"
+          />
+          <h1 class="font-display text-4xl font-semibold tracking-tight text-highlighted">
+            Diese Seite existiert nicht oder wurde verschoben.
+          </h1>
+          <p class="mt-4 text-base leading-7 text-muted">
+            Wir bauen Gruender Schweiz gerade als Review- und Ranking-Portal fuer Schweizer Freelancer um. Ueber diese Einstiege findest du schnell zur aktuellen Struktur.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <UButton
+              v-for="link in links"
+              :key="link.to"
+              :label="link.label"
+              :icon="link.icon"
+              :to="link.to"
+              color="neutral"
+              variant="outline"
+            />
+          </div>
+        </div>
       </UContainer>
     </UMain>
 
     <AppFooter />
-
-    <ClientOnly>
-      <LazyUContentSearch
-        :files="files"
-        shortcut="meta_k"
-        :navigation="navigation"
-        :links="links"
-        :fuse="{ resultLimit: 42 }"
-      />
-    </ClientOnly>
 
     <UToaster />
   </div>
