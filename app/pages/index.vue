@@ -4,7 +4,9 @@ const { data: rankings } = await useAsyncData('home-rankings', () => queryCollec
 const { data: reviews } = await useAsyncData('home-reviews', () => queryCollection('reviews').all())
 const { data: articles } = await useAsyncData('home-articles', () => queryCollection('articles').order('date', 'DESC').all())
 
-const featuredRankings = computed(() => rankings.value?.slice(0, 3) ?? [])
+const featuredRankings = computed(() => {
+  return rankings.value?.filter(ranking => ranking?.topPick?.name).slice(0, 3) ?? []
+})
 const featuredReviews = computed(() => reviews.value?.slice(0, 4) ?? [])
 const featuredArticles = computed(() => articles.value?.slice(0, 3) ?? [])
 
@@ -145,7 +147,7 @@ useSeoMeta({
                 {{ ranking.summary }}
               </p>
               <p class="mt-3 text-sm text-highlighted">
-                Top Pick: {{ ranking.topPick.name }}
+                Top Pick: {{ ranking.topPick?.name || 'noch pruefen' }}
               </p>
             </NuxtLink>
           </div>

@@ -10,6 +10,10 @@ const items = computed(() => [{
   to: '/bestenlisten',
   active: route.path.startsWith('/bestenlisten')
 }, {
+  label: 'Vergleiche',
+  to: '/vergleiche',
+  active: route.path.startsWith('/vergleiche')
+}, {
   label: 'Reviews',
   to: '/reviews',
   active: route.path.startsWith('/reviews')

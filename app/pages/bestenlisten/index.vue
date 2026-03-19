@@ -33,7 +33,7 @@ useSeoMeta({
           {{ ranking.summary }}
         </p>
         <p class="mt-4 text-sm text-highlighted">
-          Top Pick: {{ ranking.topPick.name }}
+          Top Pick: {{ ranking.topPick?.name || 'noch pruefen' }}
         </p>
       </NuxtLink>
     </div>
