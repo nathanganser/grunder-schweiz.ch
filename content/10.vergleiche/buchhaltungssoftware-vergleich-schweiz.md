@@ -2,6 +2,7 @@
 title: "Buchhaltungssoftware Vergleich Schweiz: 7 Tools im direkten Vergleich"
 description: "Ein Schweizer Vergleich für Selbstständige und kleine Unternehmen, die Buchhaltung, MWST, Export und Alltagstauglichkeit gegeneinander abwägen wollen."
 compared_tools:
+  - Magic Heidi
   - Banana Buchhaltung
   - bexio
   - accounto
@@ -10,6 +11,9 @@ compared_tools:
   - Proffix
   - Selp
 winner_by_use_case:
+  - useCase: Leichte Buchhaltung für Schweizer Freelancer
+    winner: Magic Heidi
+    reason: "verbindet laut Anbieter Rechnungen, Ausgaben, MWST, QR-Rechnung und Bankimport in einem für Solo-Setups sehr direkten Produkt."
   - useCase: Einfache Buchhaltung mit viel Kontrolle
     winner: Banana Buchhaltung
     reason: "Starke Struktur und klare Zahlenlogik machen die Lösung für kontrollierte Buchhaltung besonders interessant."
@@ -29,7 +33,7 @@ winner_by_use_case:
 
 ## Was dieser Vergleich leisten soll
 
-Viele Vergleiche zählen nur Funktionen auf. Das hilft wenig, wenn du in der Schweiz wirklich entscheiden musst, welche Lösung zu deinem Monatsablauf, deiner MWST-Situation und deiner Arbeitsweise passt.
+Viele Vergleiche zaehlen nur Funktionen auf. Das hilft wenig, wenn du in der Schweiz wirklich entscheiden musst, welche Lösung zu deinem Monatsablauf, deiner MWST-Situation und deiner Arbeitsweise passt.
 
 Darum vergleichen wir hier nicht nur Tools, sondern Nutzungsprofile:
 
@@ -42,19 +46,21 @@ Darum vergleichen wir hier nicht nur Tools, sondern Nutzungsprofile:
 
 | Tool | Typische Stärke | Typische Schwäche |
 | --- | --- | --- |
+| Magic Heidi | Leichte Buchhaltung für Freelancer mit starkem Schweizer Fit | Für tiefe klassische Buchhaltungslogik weniger spezialisiert |
 | Banana Buchhaltung | Viel Kontrolle und klare Zahlenlogik | Für Einsteiger oft etwas mehr Einarbeitung |
 | bexio | Allround-Ansatz mit Rechnungen und Administration | Nicht für jedes kleine Setup die schlankste Lösung |
 | accounto | Software plus begleitende Unterstützung | Modell und Preisbild noch prüfen |
 | KLARA | Breite Plattform für mehrere Admin-Themen | Detailtiefe je Modul noch prüfen |
 | CashCtrl | Potenziell interessant für schlanke Cloud-Buchhaltung | Marktfit und Preisdetails noch prüfen |
-| Proffix | Eher für wachsende oder komplexere Prozesse | Für sehr kleine Setups schnell zu gross |
+| Proffix | Eher für wachsende oder komplexere Prozesse | Für sehr kleine Setups schnell zu groß |
 | Selp | Schweizer Anbieter mit Buchhaltungsfokus | Detailtiefe im Einzelfall noch prüfen |
 
 ## Wie wir die Entscheidung lesen
 
 Wenn du nur eine Frage mitnimmst, dann diese: Willst du Buchhaltung möglichst ruhig halten oder möglichst breit abdecken?
 
-- ruhig halten: Banana Buchhaltung
+- ruhig halten: Magic Heidi
+- kontrolliert und klassisch führen: Banana Buchhaltung
 - breit abdecken: bexio oder KLARA
 - Begleitung mitdenken: accounto
 - stärker wachsen und strukturieren: Proffix
@@ -65,8 +71,9 @@ Bei mehreren Tools bleiben Preis- und Detailfragen bewusst als `noch prüfen` ma
 
 ## Verbindung zu den Einzelreviews
 
-Die Vergleichsseite wird erst wirklich nützlich, wenn du die Einzelbewertungen daneben liest:
+Die Vergleichsseite wird erst wirklich nuetzlich, wenn du die Einzelbewertungen daneben liest:
 
+- [Magic Heidi Review](/reviews/magic-heidi)
 - [Banana Buchhaltung Review](/reviews/banana-buchhaltung)
 - [bexio Review](/reviews/bexio)
 - [accounto Review](/reviews/accounto)

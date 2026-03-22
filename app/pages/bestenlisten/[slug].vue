@@ -133,33 +133,58 @@ useSeoMeta({
           <table class="w-full text-sm">
             <thead>
               <tr class="border-b border-default">
-                <th class="pb-3 pr-4 text-left font-medium text-muted">Tool</th>
-                <th class="pb-3 px-4 text-left font-medium text-muted">Beste für</th>
-                <th class="pb-3 px-4 text-left font-medium text-muted">Preisbild</th>
-                <th class="pb-3 pl-4 text-left font-medium text-muted">Schweizer Fit</th>
+                <th class="pb-3 pr-4 text-left font-medium text-muted">
+                  Tool
+                </th>
+                <th class="pb-3 px-4 text-left font-medium text-muted">
+                  Beste für
+                </th>
+                <th class="pb-3 px-4 text-left font-medium text-muted">
+                  Preisbild
+                </th>
+                <th class="pb-3 pl-4 text-left font-medium text-muted">
+                  Schweizer Fit
+                </th>
               </tr>
             </thead>
             <tbody>
               <tr class="border-b border-default/50 bg-primary/5">
                 <td class="py-3 pr-4">
                   <div class="flex items-center gap-2">
-                    <UIcon name="i-lucide-trophy" class="size-4 text-primary" />
+                    <UIcon
+                      name="i-lucide-trophy"
+                      class="size-4 text-primary"
+                    />
                     <span class="font-semibold text-highlighted">{{ ranking.topPick.name }}</span>
                   </div>
                 </td>
-                <td class="py-3 px-4 text-muted">{{ ranking.topPick.bestFor }}</td>
-                <td class="py-3 px-4 text-muted">{{ ranking.topPick.priceSummary }}</td>
-                <td class="py-3 pl-4 text-muted">{{ ranking.topPick.swissFit }}</td>
+                <td class="py-3 px-4 text-muted">
+                  {{ ranking.topPick.bestFor }}
+                </td>
+                <td class="py-3 px-4 text-muted">
+                  {{ ranking.topPick.priceSummary }}
+                </td>
+                <td class="py-3 pl-4 text-muted">
+                  {{ ranking.topPick.swissFit }}
+                </td>
               </tr>
               <tr
                 v-for="tool in ranking.runnerUps"
                 :key="tool.slug"
                 class="border-b border-default/50"
               >
-                <td class="py-3 pr-4 font-medium text-highlighted">{{ tool.name }}</td>
-                <td class="py-3 px-4 text-muted">{{ tool.bestFor }}</td>
-                <td class="py-3 px-4 text-muted">{{ tool.priceSummary }}</td>
-                <td class="py-3 pl-4 text-muted">{{ tool.swissFit }}</td>
+                <td class="py-3 pr-4 font-medium text-highlighted">
+                  {{ tool.name }}
+                </td>
+                <td class="py-3 px-4 text-muted">
+                  {{ tool.bestFor }}
+                </td>
+                <td class="py-3 px-4 text-muted">
+                  {{ tool.priceSummary }}
+                </td>
+                <td class="py-3 pl-4 text-muted">
+                  {{ tool.swissFit }}
+                </td>
               </tr>
             </tbody>
           </table>
@@ -233,8 +258,13 @@ useSeoMeta({
           </div>
         </div>
 
-        <div v-if="relatedArticles.length" class="rounded-[1.75rem] border border-default bg-default/70 p-6">
-          <p class="text-sm font-semibold text-highlighted">Passende Ratgeber</p>
+        <div
+          v-if="relatedArticles.length"
+          class="rounded-[1.75rem] border border-default bg-default/70 p-6"
+        >
+          <p class="text-sm font-semibold text-highlighted">
+            Passende Ratgeber
+          </p>
           <div class="mt-4 space-y-3">
             <NuxtLink
               v-for="article in relatedArticles"

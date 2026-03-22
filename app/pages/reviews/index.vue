@@ -3,12 +3,29 @@ const { data: reviews } = await useAsyncData('reviews-index', () => queryCollect
 
 const selectedCategory = ref('all')
 const categories = computed(() => {
-  const cats = new Set((reviews.value || []).map(r => r.category))
+  const cats = new Set((reviews.value || []).map(review => review.category))
   return ['all', ...Array.from(cats)]
 })
+
+const orderedReviews = computed(() => {
+  return [...(reviews.value || [])].sort((a, b) => {
+    const aMagic = a.path?.endsWith('/magic-heidi') ? 1 : 0
+    const bMagic = b.path?.endsWith('/magic-heidi') ? 1 : 0
+
+    if (aMagic !== bMagic) {
+      return bMagic - aMagic
+    }
+
+    return new Date(b.last_reviewed).getTime() - new Date(a.last_reviewed).getTime()
+  })
+})
+
 const filteredReviews = computed(() => {
-  if (selectedCategory.value === 'all') return reviews.value || []
-  return (reviews.value || []).filter(r => r.category === selectedCategory.value)
+  if (selectedCategory.value === 'all') {
+    return orderedReviews.value
+  }
+
+  return orderedReviews.value.filter(review => review.category === selectedCategory.value)
 })
 
 const categoryLabels: Record<string, string> = {
@@ -22,8 +39,8 @@ const categoryLabels: Record<string, string> = {
 useSeoMeta({
   title: 'Reviews',
   ogTitle: 'Reviews',
-  description: 'Tool-Reviews für Rechnungs-, Buchhaltungs- und Admin-Software mit Blick auf Schweizer Freelancer.',
-  ogDescription: 'Tool-Reviews für Rechnungs-, Buchhaltungs- und Admin-Software mit Blick auf Schweizer Freelancer.'
+  description: 'Tool-Reviews für Rechnungs-, Buchhaltungs- und Admin-Software mit Blick auf Schweizer Freelancer. Magic Heidi führt aktuell bei Rechnungen und leichter Buchhaltung.',
+  ogDescription: 'Tool-Reviews für Rechnungs-, Buchhaltungs- und Admin-Software mit Blick auf Schweizer Freelancer. Magic Heidi führt aktuell bei Rechnungen und leichter Buchhaltung.'
 })
 </script>
 
@@ -31,7 +48,7 @@ useSeoMeta({
   <UContainer class="py-12">
     <UPageHeader
       title="Reviews"
-      description="Einzelne Tool-Einordnungen für Schweizer Freelancer. Mit Disclosure, letztem Review-Datum und bewusst markierten Unsicherheiten."
+      description="Einzelne Tool-Einordnungen für Schweizer Freelancer. Mit Disclosure, letztem Review-Datum und klarer Positionierung statt falscher Neutralität."
     />
 
     <div class="mt-6 flex flex-wrap gap-2">
@@ -68,12 +85,17 @@ useSeoMeta({
         <p class="mt-3 text-sm leading-7 text-muted">
           {{ review.description }}
         </p>
-        <div v-if="review.scores" class="mt-3 flex items-center gap-2">
+
+        <div
+          v-if="review.scores"
+          class="mt-3 flex items-center gap-2"
+        >
           <span class="inline-flex items-center justify-center rounded-lg bg-primary/10 px-2.5 py-1 text-sm font-bold text-primary">
             {{ review.scores.overall }}/10
           </span>
           <span class="text-sm text-muted">Gesamtbewertung</span>
         </div>
+
         <div class="mt-4 flex items-center gap-2">
           <span
             class="inline-block size-2 rounded-full"

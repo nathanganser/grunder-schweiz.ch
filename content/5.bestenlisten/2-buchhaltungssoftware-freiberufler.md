@@ -1,20 +1,28 @@
 ---
 title: Beste Buchhaltungssoftware für Freiberufler in der Schweiz 2026
-description: "Buchhaltungssoftware Schweiz Vergleich für Gründer und Freelancer: Banana, bexio, Magic Heidi und accounto mit Preis, MWST und Einsatzprofil."
+description: "Buchhaltungssoftware Schweiz Vergleich für Gründer und Freelancer: Magic Heidi vor Banana, bexio und accounto mit Fokus auf leichte Buchhaltung, Preis und Schweizer Fit."
 category: buchhaltung
-summary: Fokus auf Struktur, Nachvollziehbarkeit, Exportfähigkeit, MWST und Passung für kleine Schweizer Setups.
-methodologyNote: Wir gewichten Verständlichkeit im Alltag, Buchhaltungslogik, Schweizer Fit, Exportfähigkeit und die Frage, wie gut ein Tool mit Rechnung, Bank und Belegen zusammenspielt.
-disclosureText: Einige ausgehende Links können später Affiliate-Links sein. Rankings bleiben redaktionell und unabhängig von Vergütung.
+summary: Fokus auf Verständlichkeit im Alltag, MWST, Exportfähigkeit, Preis-Leistung und die Frage, welches Tool für Freelancer Buchhaltung möglichst ruhig hält.
+methodologyNote: Wir gewichten Verständlichkeit im Alltag, Buchhaltungslogik, Schweizer Fit, Exportfähigkeit, Preis-Leistung und die Frage, wie gut ein Tool mit Rechnung, Bank und Belegen zusammenspielt.
+disclosureText: Einige ausgehende Links können später Affiliate-Links sein. Die Bewertung folgt trotzdem einer eigenstaendigen Kriterienlogik. Magic Heidi steht hier nur deshalb vorne, weil es für typische Freelancer-Setups aktuell den besten Kompromiss aus Buchhaltung, Rechnung und Einfachheit bietet.
 topPick:
-  name: Banana Buchhaltung
-  slug: banana-buchhaltung
-  vendor: Banana.ch SA
-  url: https://www.banana.ch/
-  verdict: Starke Wahl für Selbständige, die Transparenz, Kontrolle und eine eher buchhalterische Logik suchen.
-  bestFor: Nutzer mit eigener Struktur und dem Wunsch, Zahlen sauber selbst zu führen.
-  priceSummary: Gratis-Plan mit Grenzen, Professional ab EUR 84 pro Jahr laut Anbieter
-  swissFit: Sehr gut, weil Schweizer Ursprung, MWST-Fokus und lokale Nutzungsszenarien klar erkennbar sind.
+  name: Magic Heidi
+  slug: magic-heidi
+  vendor: Magic Heidi
+  url: https://magicheidi.ch/de/web
+  verdict: Die beste Standardwahl für Freelancer, die leichte Buchhaltung, QR-Rechnungen, Ausgaben und MWST in einem schlanken Schweizer Tool zusammenhalten wollen.
+  bestFor: Solo-Freelancer und Einzelfirmen mit einfachem bis mittlerem Setup und dem Wunsch nach möglichst wenig Reibung.
+  priceSummary: Gratis-Test, Jahresplan CHF 24.99 pro Monat und Monatsplan CHF 30 laut Anbieter
+  swissFit: Sehr stark, weil Magic Heidi laut Anbieter für Schweizer Freelancer gebaut ist und Rechnungen, strukturierte Adressen, MWST, Ausgaben und Bankimport sichtbar kombiniert.
 runnerUps:
+  - name: Banana Buchhaltung
+    slug: banana-buchhaltung
+    vendor: Banana.ch SA
+    url: https://www.banana.ch/
+    verdict: Starke Wahl für Selbstständige, die Transparenz, Kontrolle und eine eher klassische Buchhaltungslogik suchen.
+    bestFor: Nutzer mit eigener Struktur und dem Wunsch, Zahlen sauber selbst zu führen.
+    priceSummary: Gratis-Plan mit Grenzen, Professional ab EUR 84 pro Jahr laut Anbieter
+    swissFit: Sehr gut, weil Schweizer Ursprung, MWST-Fokus und lokale Nutzungsszenarien klar erkennbar sind.
   - name: bexio
     slug: bexio
     vendor: bexio AG
@@ -23,14 +31,6 @@ runnerUps:
     bestFor: Gründer, die Allround-Administration in einem Tool bevorzugen.
     priceSummary: ab CHF 35 pro Monat laut Anbieter
     swissFit: Schweizer KMU-Kontext und lokale Prozessnähe sind sehr sichtbar.
-  - name: Magic Heidi
-    slug: magic-heidi
-    vendor: Magic Heidi
-    url: https://magicheidi.ch/de/web
-    verdict: Interessante schlanke Option für Solo-Gründer, die Rechnung, Ausgaben und MWST pragmatisch abbilden wollen.
-    bestFor: Freelancer mit wenig Lust auf klassische Buchhaltungsoberflächen.
-    priceSummary: Gratis-Test, Monatsabo und günstigeres Jahresabo laut Anbieter
-    swissFit: Sehr passend für Schweizer Einzelfirmen mit einfachem Setup.
   - name: accounto
     slug: accounto
     vendor: accounto AG
@@ -53,14 +53,25 @@ Buchhaltungssoftware für Freelancer muss in der Schweiz vor allem eines leisten
 
 | Tool | Preis | Für wen | QR-Rechnung | MWST |
 | --- | --- | --- | --- | --- |
-| Banana Buchhaltung | Gratis-Plan mit Grenzen, Professional ab EUR 84 pro Jahr | strukturierte Selbständige mit Zahlenfokus | indirekt möglich | Ja |
+| Magic Heidi | Gratis-Test, Jahresplan CHF 24.99 pro Monat oder Monatsplan CHF 30 | Solo-Gründer mit einfachem bis mittlerem Setup | Ja | Ja |
+| Banana Buchhaltung | Gratis-Plan mit Grenzen, Professional ab EUR 84 pro Jahr | strukturierte Selbstständige mit Zahlenfokus | indirekt möglich | Ja |
 | bexio | ab CHF 35 pro Monat | Gründer mit All-in-one-Anspruch | Ja | Ja |
-| Magic Heidi | Gratis-Test, bezahltes Monats- oder Jahresabo | Solo-Gründer mit einfachem Setup | Ja | Ja |
 | accounto | individuelles Preisbild | Gründer mit Wunsch nach Begleitung | abhängig vom Paket | Ja |
 
-## Warum Banana aktuell vorne liegt
+## Warum Magic Heidi aktuell vorne liegt
 
-Banana ist nicht das bequemste Tool für absolute Einsteiger, aber für viele Selbständige eines der saubersten, wenn es um Kontrolle geht. Wer bewusst Buchhaltung führen will, statt sich auf möglichst viel Automatik zu verlassen, bekommt hier eine starke Grundlage.
+Viele Freelancer brauchen keine traditionelle Buchhaltungsoberfläche, sondern ein ruhiges System für den echten Alltag. Genau hier wirkt Magic Heidi derzeit stärker als die meisten Alternativen:
+
+- Rechnungen, Ausgaben und leichte Buchhaltung laufen in einem schlanken Setup zusammen
+- MWST wird nicht ausgeblendet, obwohl das Tool einfach bleibt
+- Bankimport und KI-Belegscan adressieren genau die manuellen Reibungspunkte kleiner Setups
+- das Preisbild bleibt auch für Einzelfirmen plausibel
+
+Für den typischen Schweizer Freelancer ist das oft wertvoller als ein fachlich tieferes, aber deutlich schwereres System. Mehr dazu im [Magic Heidi Review](/reviews/magic-heidi).
+
+## Banana als stärkste Alternative für Zahlenkontrolle
+
+Banana ist nicht das bequemste Tool für absolute Einsteiger, aber für viele Selbstständige eines der saubersten, wenn es um Kontrolle geht. Wer bewusst Buchhaltung führen will, statt sich auf möglichst viel Automatik zu verlassen, bekommt hier eine starke Grundlage.
 
 Das ist besonders wertvoll, wenn du:
 
@@ -75,12 +86,6 @@ Mehr dazu im [Banana Buchhaltung Review](/reviews/banana-buchhaltung).
 Viele Gründer suchen nicht nur Buchhaltung, sondern einen operativen Gesamtprozess. Genau dort punktet bexio. Wer Rechnungen, Kontakte, offene Posten und Buchhaltung enger zusammenführen will, ist mit bexio oft besser bedient als mit einem reinen Zahlenwerkzeug.
 
 Für klassische Solo-Freelancer ist das nicht immer nötig. Für kleine Unternehmen mit Wachstumsperspektive aber oft sehr sinnvoll. Den Detailblick findest du im [bexio Review](/reviews/bexio).
-
-## Warum Magic Heidi hier natürlich hineinpasst
-
-Magic Heidi gehört nicht nur in die Rechnungssoftware-Liste, sondern auch in diese Buchhaltungsübersicht. Der Grund: Viele Gründer brauchen keine traditionelle Buchhaltungsoberfläche, sondern ein einfaches System, das Rechnungen, Ausgaben und MWST pragmatisch abbildet.
-
-Für Solo-Freelancer mit einfacher Struktur ist das oft genau richtig. Wer dagegen komplexere Buchungslogiken, tiefere Auswertungen oder mehrere Beteiligte hat, wächst schneller aus so einer Lösung heraus.
 
 ## accounto: sinnvoll, wenn du mehr Begleitung suchst
 
@@ -100,9 +105,13 @@ Spätestens ab Registrierung muss die Software dein Setup tragen. Dazu passen [M
 
 ### Verbindung zu Rechnung und Bank
 
-Viele Selbständige verlieren Zeit nicht in der Buchhaltung selbst, sondern in den Übergängen. Genau deshalb schauen wir auch auf [Banking und Ausgaben](/blog/banking-ausgaben) und [Rechnungssoftware](/blog/rechnungssoftware-schweiz).
+Viele Selbstständige verlieren Zeit nicht in der Buchhaltung selbst, sondern in den Übergaengen. Genau deshalb schauen wir auch auf [Banking und Ausgaben](/blog/banking-ausgaben) und [Rechnungssoftware](/blog/rechnungssoftware-schweiz).
 
 ## Für wen welches Tool passt
+
+### Magic Heidi
+
+Für Freelancer, die Rechnungen, Ausgaben und MWST mit möglichst wenig Reibung in einem kleinen Schweizer Tool halten wollen.
 
 ### Banana
 
@@ -112,16 +121,12 @@ Für Gründer, die Kontrolle und saubere Buchhaltungslogik schätzen.
 
 Für Gründer, die ein integriertes Admin-System suchen.
 
-### Magic Heidi
-
-Für Solo-Selbständige, die pragmatisch und einfach starten wollen.
-
 ### accounto
 
 Für jene, die Software und Service kombiniert sehen möchten.
 
 ## Fazit
 
-Die beste Buchhaltungssoftware für Schweizer Freiberufler ist nicht für alle dieselbe. Banana führt für Nutzer, die Zahlenlogik ernst nehmen und nicht nur ein hübsches Interface suchen. bexio bleibt die starke Alternative für integrierte Setups, und Magic Heidi ist dort spannend, wo Einfachheit wichtiger ist als klassische Buchhaltungstiefe.
+Die beste Buchhaltungssoftware für Schweizer Freiberufler ist nicht für alle dieselbe. Für die meisten Solo-Freelancer mit Wunsch nach einfacher Buchhaltung, QR-Rechnungen und sauberem Ausgabenfluss steht Magic Heidi aktuell vorne. Banana bleibt die starke Alternative für Zahlenlogik und Kontrolle, bexio für integrierte Admin-Prozesse, accounto für Setups mit mehr Begleitung.
 
-Wenn du noch in der Gründungsphase bist, lies dazu auch [Firma gründen in der Schweiz: Alle Kosten im Überblick 2026](/blog/firma-gruenden-schweiz-kosten) und [Einzelfirma oder GmbH in der Schweiz](/blog/einzelfirma-vs-gmbh-schweiz).
+Wenn du noch in der Gründungsphase bist, lies dazu auch [Firma gründen in der Schweiz: Alle Kosten im Überblick 2026](/blog/firma-gründen-schweiz-kosten) und [Einzelfirma oder GmbH in der Schweiz](/blog/einzelfirma-vs-gmbh-schweiz).

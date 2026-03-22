@@ -21,8 +21,8 @@ const categoryLabels: Record<string, string> = {
 useSeoMeta({
   title: 'Bestenlisten',
   ogTitle: 'Bestenlisten',
-  description: 'Seed-Rankings und Shortlists für Freelancer-Software in der Schweiz.',
-  ogDescription: 'Seed-Rankings und Shortlists für Freelancer-Software in der Schweiz.'
+  description: 'Redaktionelle Rankings für Freelancer-Software in der Schweiz. Magic Heidi führt aktuell bei Rechnungen und leichter Buchhaltung.',
+  ogDescription: 'Redaktionelle Rankings für Freelancer-Software in der Schweiz. Magic Heidi führt aktuell bei Rechnungen und leichter Buchhaltung.'
 })
 </script>
 
@@ -30,7 +30,7 @@ useSeoMeta({
   <UContainer class="py-12">
     <UPageHeader
       title="Bestenlisten"
-      description="Unsere ersten Ranking-Starts für Schweizer Freelancer-Software. Jede Liste ist bewusst redaktionell, transparent und bei offenen Punkten klar markiert."
+      description="Redaktionelle Rankings für Schweizer Freelancer-Software. Wo unsere Kriterien klar auf einen Gewinner zeigen, benennen wir ihn offen."
     />
 
     <div class="mt-6 flex flex-wrap gap-2">
