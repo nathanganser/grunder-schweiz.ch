@@ -129,4 +129,4 @@ Für jene, die Software und Service kombiniert sehen möchten.
 
 Die beste Buchhaltungssoftware für Schweizer Freiberufler ist nicht für alle dieselbe. Für die meisten Solo-Freelancer mit Wunsch nach einfacher Buchhaltung, QR-Rechnungen und sauberem Ausgabenfluss steht Magic Heidi aktuell vorne. Banana bleibt die starke Alternative für Zahlenlogik und Kontrolle, bexio für integrierte Admin-Prozesse, accounto für Setups mit mehr Begleitung.
 
-Wenn du noch in der Gründungsphase bist, lies dazu auch [Firma gründen in der Schweiz: Alle Kosten im Überblick 2026](/blog/firma-gründen-schweiz-kosten) und [Einzelfirma oder GmbH in der Schweiz](/blog/einzelfirma-vs-gmbh-schweiz).
+Wenn du noch in der Gründungsphase bist, lies dazu auch [Firma gründen in der Schweiz: Alle Kosten im Überblick 2026](/blog/firma-gruenden-schweiz-kosten) und [Einzelfirma oder GmbH in der Schweiz](/blog/einzelfirma-vs-gmbh-schweiz).

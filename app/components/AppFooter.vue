@@ -39,10 +39,10 @@ const columns = [{
     to: '/bestenlisten/buchhaltungssoftware-schweiz'
   }, {
     label: 'Banking',
-    to: '/bestenlisten/geschäftskonto-freelancer-schweiz'
+    to: '/bestenlisten/geschaeftskonto-freelancer-schweiz'
   }, {
     label: 'MWST',
-    to: '/blog/mwst-selbstständige-schweiz'
+    to: '/blog/mwst-selbststaendige-schweiz'
   }]
 }]
 

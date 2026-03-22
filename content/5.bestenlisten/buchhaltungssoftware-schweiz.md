@@ -89,4 +89,4 @@ Die zentrale Frage ist nicht, welches Tool am meisten verspricht, sondern welche
 Wer die Liste mit dem Praxisbedarf abgleichen will, sollte sie zusammen mit dem Vergleich lesen:
 
 - [Buchhaltungssoftware Vergleich Schweiz](/vergleiche/buchhaltungssoftware-vergleich-schweiz)
-- [MWST für Selbstständige in der Schweiz einfach erklärt](/blog/mwst-selbstständige-schweiz)
+- [MWST für Selbstständige in der Schweiz einfach erklärt](/blog/mwst-selbststaendige-schweiz)
