@@ -95,7 +95,7 @@ Viele Gründer überschätzen ihre internationalen Anforderungen. Wenn 90 Prozen
 Ein Geschäftskonto ist nur ein Baustein. Es sollte mit deinem Rechnungs- und Buchhaltungssetup harmonieren. Gute Anschlusspunkte dafür sind:
 
 - [Beste Rechnungssoftware für Freelancer in der Schweiz 2026](/bestenlisten/rechnungssoftware-schweiz)
-- [Beste Buchhaltungssoftware für Freiberufler in der Schweiz 2026](/bestenlisten/2-buchhaltungssoftware-freiberufler)
+- [Beste Buchhaltungssoftware für Freiberufler in der Schweiz 2026](/bestenlisten/buchhaltungssoftware-freiberufler)
 
 ### Die Gründungsphase mitdenken
 

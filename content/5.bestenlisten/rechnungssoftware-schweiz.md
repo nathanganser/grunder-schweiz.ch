@@ -105,7 +105,7 @@ Rechnungssoftware endet nicht beim PDF. Gute Tools helfen auch bei:
 - Beleg- und Zahlungslogik
 - Übergabe in die Buchhaltung
 
-Darum lohnt sich parallel der Blick auf [Buchhaltungssoftware für Freiberufler in der Schweiz](/bestenlisten/2-buchhaltungssoftware-freiberufler).
+Darum lohnt sich parallel der Blick auf [Buchhaltungssoftware für Freiberufler in der Schweiz](/bestenlisten/buchhaltungssoftware-freiberufler).
 
 ## Welche Lösung für welchen Gründertyp passt
 
@@ -129,4 +129,4 @@ Dann kann Banana interessant sein.
 
 Die beste Rechnungssoftware für Schweizer Freelancer hängt weniger vom größten Funktionskatalog ab als vom Aufbau des Geschäfts. Für die meisten Solo-Freelancer mit Wunsch nach sauberem Start, QR-Rechnung und einfacher Buchhaltung ist Magic Heidi aktuell die beste Gesamtlösung. bexio bleibt die starke Alternative für breitere Prozesse, während KLARA und Banana spezifischere Profile bedienen.
 
-Wenn du als Nächstes den Sprung von der Rechnung in die Finanzen planst, lies direkt weiter in [Buchhaltungssoftware für Freiberufler in der Schweiz 2026](/bestenlisten/2-buchhaltungssoftware-freiberufler) und [MWST im Tool](/blog/mwst-schweiz).
+Wenn du als Nächstes den Sprung von der Rechnung in die Finanzen planst, lies direkt weiter in [Buchhaltungssoftware für Freiberufler in der Schweiz 2026](/bestenlisten/buchhaltungssoftware-freiberufler) und [MWST im Tool](/blog/mwst-schweiz).

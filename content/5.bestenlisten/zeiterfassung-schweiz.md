@@ -76,6 +76,6 @@ Zeiterfassung wird erst dann wirklich gut, wenn sie nicht bremst. Für Freelance
 ## Interne Links
 
 - [Beste Rechnungssoftware für Freelancer in der Schweiz 2026](/bestenlisten/rechnungssoftware-schweiz)
-- [Beste Buchhaltungssoftware für Selbstständige in der Schweiz 2026](/bestenlisten/buchhaltungssoftware-schweiz)
+- [Beste Buchhaltungssoftware für Selbstständige in der Schweiz 2026](/bestenlisten/buchhaltungssoftware-freiberufler)
 - [All-in-one oder Best-of-Breed für Schweizer Freelancer?](/blog/all-in-one-vs-best-of-breed)
 - [Geschäftskonto für Freelancer: worauf es in der Schweiz wirklich ankommt](/blog/geschaeftskonto-freelancer-schweiz)
