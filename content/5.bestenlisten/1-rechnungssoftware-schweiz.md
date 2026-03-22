@@ -1,6 +1,6 @@
 ---
 title: Beste Rechnungssoftware für Freelancer in der Schweiz 2026
-description: Die beste Rechnungssoftware Schweiz für Freelancer: Vergleich von bexio, KLARA, Magic Heidi und Banana mit Fokus auf QR-Rechnung und MWST.
+description: "Die beste Rechnungssoftware Schweiz für Freelancer: Vergleich von bexio, KLARA, Magic Heidi und Banana mit Fokus auf QR-Rechnung und MWST."
 category: rechnungen
 summary: Fokus auf klaren Rechnungsablauf, saubere Statuslogik, QR-Rechnung und Eignung für Schweizer Gründer.
 methodologyNote: Wir gewichten Alltagstauglichkeit, Rechnungsfluss, Schweizer Fit, Preisbild und die Frage, wie sauber ein Tool später in Buchhaltung und Zahlungsalltag übergeht.
@@ -106,7 +106,7 @@ Rechnungssoftware endet nicht beim PDF. Gute Tools helfen auch bei:
 - Beleg- und Zahlungslogik
 - Übergabe in die Buchhaltung
 
-Darum lohnt sich parallel der Blick auf [Buchhaltungssoftware für Freiberufler in der Schweiz](/bestenlisten/buchhaltungssoftware-freiberufler).
+Darum lohnt sich parallel der Blick auf [Buchhaltungssoftware für Freiberufler in der Schweiz](/bestenlisten/2-buchhaltungssoftware-freiberufler).
 
 ## Welche Lösung für welchen Gründertyp passt
 
@@ -130,4 +130,4 @@ Dann kann Banana interessant sein.
 
 Die beste Rechnungssoftware für Schweizer Freelancer hängt weniger vom Funktionskatalog ab als vom Aufbau deines Geschäfts. Für die meisten Gründer mit Anspruch auf saubere Prozesse bleibt bexio aktuell der stärkste Allrounder. Magic Heidi ist aber eine sehr gute Alternative für Solo-Selbständige, die bewusst schlank bleiben wollen.
 
-Wenn du als Nächstes den Sprung von der Rechnung in die Finanzen planst, lies direkt weiter in [Buchhaltungssoftware für Freiberufler in der Schweiz 2026](/bestenlisten/buchhaltungssoftware-freiberufler) und [MWST im Tool](/blog/mwst-schweiz).
+Wenn du als Nächstes den Sprung von der Rechnung in die Finanzen planst, lies direkt weiter in [Buchhaltungssoftware für Freiberufler in der Schweiz 2026](/bestenlisten/2-buchhaltungssoftware-freiberufler) und [MWST im Tool](/blog/mwst-schweiz).

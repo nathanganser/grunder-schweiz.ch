@@ -1,6 +1,6 @@
 ---
 title: Beste Buchhaltungssoftware für Freiberufler in der Schweiz 2026
-description: Buchhaltungssoftware Schweiz Vergleich für Gründer und Freelancer: Banana, bexio, Magic Heidi und accounto mit Preis, MWST und Einsatzprofil.
+description: "Buchhaltungssoftware Schweiz Vergleich für Gründer und Freelancer: Banana, bexio, Magic Heidi und accounto mit Preis, MWST und Einsatzprofil."
 category: buchhaltung
 summary: Fokus auf Struktur, Nachvollziehbarkeit, Exportfähigkeit, MWST und Passung für kleine Schweizer Setups.
 methodologyNote: Wir gewichten Verständlichkeit im Alltag, Buchhaltungslogik, Schweizer Fit, Exportfähigkeit und die Frage, wie gut ein Tool mit Rechnung, Bank und Belegen zusammenspielt.
