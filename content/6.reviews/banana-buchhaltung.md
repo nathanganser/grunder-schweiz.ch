@@ -22,6 +22,21 @@ features:
   - Buchhaltungsfokus
   - Struktur und Nachvollziehbarkeit
   - MWST- und Auswertungsnähe
+decision_questions:
+  - question: Ist dir volle Kontrolle über Buchungslogik wichtig?
+    yes_answer: Banana gibt dir maximale Kontrolle.
+    no_answer: Automatisierte Tools sind bequemer.
+  - question: Hast du Erfahrung mit doppelter Buchhaltung?
+    yes_answer: Banana passt perfekt zu deinem Wissen.
+    no_answer: Die Lernkurve ist steil, andere Tools sind einsteigerfreundlicher.
+  - question: Brauchst du ein Offline-Tool ohne Cloud-Zwang?
+    yes_answer: Banana funktioniert auch komplett lokal.
+    no_answer: Cloud-Tools bieten mehr Flexibilität.
+scores:
+  overall: 7
+  swiss_fit: 8
+  value: 8
+  usability: 6
 ---
 
 Banana Buchhaltung ist kein Tool, das dich mit Marketing beruhigt. Genau das macht es für viele Selbständige interessant. Wer Buchhaltung nachvollziehen und nicht bloss wegdelegieren will, bekommt hier eine ernsthafte Lösung mit klarer Zahlenlogik.

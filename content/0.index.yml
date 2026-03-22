@@ -1,8 +1,8 @@
-title: Schweizer Software-Shortlist fuer Freelancer
-description: Unabhaengige Rankings, Reviews und Ratgeber fuer Rechnungs-, Buchhaltungs-, Zeiterfassungs- und Banking-Tools in der Schweiz.
+title: Schweizer Software-Shortlist für Freelancer
+description: Unabhängige Rankings, Reviews und Ratgeber für Rechnungs-, Buchhaltungs-, Zeiterfassungs- und Banking-Tools in der Schweiz.
 seo:
-  title: "Gründer Schweiz | Reviews und Rankings fuer Freelancer-Software"
-  description: "Unabhaengige Orientierung fuer Schweizer Selbststaendige: Kategorien, Bestenlisten, Review-Methodik und klare Affiliate-Kennzeichnung."
+  title: "Gründer Schweiz | Reviews und Rankings für Freelancer-Software"
+  description: "Unabhängige Orientierung für Schweizer Selbstständige: Kategorien, Bestenlisten, Review-Methodik und klare Affiliate-Kennzeichnung."
 navigation: false
 hero:
   links:
@@ -19,12 +19,12 @@ hero:
       to: /pricing
 sections:
   - title: Die ersten Kategorien
-    description: Wir starten mit den Bereichen, die Schweizer Selbststaendige am haeufigsten vergleichen.
+    description: Wir starten mit den Bereichen, die Schweizer Selbstständige am häufigsten vergleichen.
     id: categories
     orientation: horizontal
     features:
       - name: Rechnungssoftware
-        description: Angebote, Rechnungen, Mahnungen und Exportpfade fuer Schweizer Freelancer noch pruefen.
+        description: Angebote, Rechnungen, Mahnungen und Exportpfade für Schweizer Freelancer noch prüfen.
         icon: i-lucide-file-text
       - name: Buchhaltungssoftware
         description: Einnahmen, Ausgaben, Konten und Steuerlogik mit Fokus auf klaren Workflows und Schweizer Fit.
@@ -43,37 +43,37 @@ sections:
       - name: Transparenz
         description: Affiliate-Beziehungen, Quellen und unklare Punkte werden sichtbar gemacht, statt versteckt.
         icon: i-lucide-badge-info
-      - name: Aktualitaet
-        description: Wenn Vendor-Daten oder rechtliche Details unklar sind, bleibt es bei 'noch pruefen'.
+      - name: Aktualität
+        description: Wenn Vendor-Daten oder rechtliche Details unklar sind, bleibt es bei 'noch prüfen'.
         icon: i-lucide-refresh-cw
 features:
   title: Woran wir bei jedem Tool zuerst schauen
-  description: Keine Blackbox. Jede Bewertung folgt denselben Faktoren, damit Leser Kategorien und Rankings vergleichen koennen.
+  description: Keine Blackbox. Jede Bewertung folgt denselben Faktoren, damit Leser Kategorien und Rankings vergleichen können.
   items:
     - title: Nutzwert im Alltag
-      description: Erfuellt das Tool die wiederkehrenden Aufgaben von Freelancerinnen und Freelancern ohne Umwege?
+      description: Erfüllt das Tool die wiederkehrenden Aufgaben von Freelancerinnen und Freelancern ohne Umwege?
       icon: i-lucide-sparkles
     - title: Schweizer Tauglichkeit
       description: Rechnungen, MwSt., Sprache, Support und lokale Arbeitsweise werden getrennt notiert.
       icon: i-lucide-map-pinned
     - title: Preisbild
-      description: Wir schreiben auf, was klar ist und markieren Unklarheiten konsequent mit 'noch pruefen'.
+      description: Wir schreiben auf, was klar ist und markieren Unklarheiten konsequent mit 'noch prüfen'.
       icon: i-lucide-receipt-text
     - title: Export und Kontrolle
-      description: Daten, Belege und Reportings muessen sich nachvollziehbar sichern und wiederfinden lassen.
+      description: Daten, Belege und Reportings müssen sich nachvollziehbar sichern und wiederfinden lassen.
       icon: i-lucide-archive
     - title: Transparenz
-      description: Affiliate-Hinweise und Quellen gehoeren sichtbar auf jede relevante Seite.
+      description: Affiliate-Hinweise und Quellen gehören sichtbar auf jede relevante Seite.
       icon: i-lucide-shield-check
     - title: Aktualisierung
-      description: Jedes Review bekommt ein klares Datum und wird nach Vendor- oder Gesetzes-Aenderungen ueberprueft.
+      description: Jedes Review bekommt ein klares Datum und wird nach Vendor- oder Gesetzes-Änderungen überprüft.
       icon: i-lucide-calendar-clock
 testimonials:
   headline: Redaktionelle Leitplanken
   title: Keine Blackbox, keine Marketing-Floskeln
   description: Die Shortlist soll Orientierung liefern, nicht nur Traffic. Darum halten wir Kriterien, Quellen und Unsicherheiten sichtbar.
   items:
-    - quote: Wenn ein Fakt nicht belegbar ist, bleibt er bei uns markiert statt glattgebuegelt.
+    - quote: Wenn ein Fakt nicht belegbar ist, bleibt er bei uns markiert statt glattgebügelt.
       user:
         name: Redaktion
         description: Kurz und sichtbar statt laut und unklar
@@ -81,7 +81,7 @@ testimonials:
         target: _blank
         avatar:
           src: https://i.pravatar.cc/120?img=1
-    - quote: Affiliate-Links sind okay, solange die Bewertung nicht davon abhaengt.
+    - quote: Affiliate-Links sind okay, solange die Bewertung nicht davon abhängt.
       user:
         name: Transparenz
         description: Disclosure zuerst, Empfehlung danach
@@ -89,15 +89,15 @@ testimonials:
         target: _blank
         avatar:
           src: https://i.pravatar.cc/120?img=2
-    - quote: Schweizer Fit heisst fuer uns nicht nur Sprache, sondern auch Rechnungs- und MwSt.-Logik.
+    - quote: Schweizer Fit heisst für uns nicht nur Sprache, sondern auch Rechnungs- und MwSt.-Logik.
       user:
         name: Swiss Fit
-        description: Was fuer den Alltag wirklich zaehlt
+        description: Was für den Alltag wirklich zählt
         to: https://grunder-schweiz.ch
         target: _blank
         avatar:
           src: https://i.pravatar.cc/120?img=3
-    - quote: Unklare Punkte werden mit 'noch pruefen' ausgezeichnet, nicht weggelassen.
+    - quote: Unklare Punkte werden mit 'noch prüfen' ausgezeichnet, nicht weggelassen.
       user:
         name: Klarheit
         description: Lieber sauber markiert als halb richtig

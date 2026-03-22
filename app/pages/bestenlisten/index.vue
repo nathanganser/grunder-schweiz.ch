@@ -1,11 +1,28 @@
 <script setup lang="ts">
 const { data: rankings } = await useAsyncData('rankings-index', () => queryCollection('rankings').all())
 
+const selectedCategory = ref('all')
+const categories = computed(() => {
+  const cats = new Set((rankings.value || []).map(r => r.category))
+  return ['all', ...Array.from(cats)]
+})
+const filteredRankings = computed(() => {
+  if (selectedCategory.value === 'all') return rankings.value || []
+  return (rankings.value || []).filter(r => r.category === selectedCategory.value)
+})
+const categoryLabels: Record<string, string> = {
+  all: 'Alle',
+  rechnungen: 'Rechnungen',
+  buchhaltung: 'Buchhaltung',
+  banking: 'Banking',
+  zeiterfassung: 'Zeiterfassung'
+}
+
 useSeoMeta({
   title: 'Bestenlisten',
   ogTitle: 'Bestenlisten',
-  description: 'Seed-Rankings und Shortlists fuer Freelancer-Software in der Schweiz.',
-  ogDescription: 'Seed-Rankings und Shortlists fuer Freelancer-Software in der Schweiz.'
+  description: 'Seed-Rankings und Shortlists für Freelancer-Software in der Schweiz.',
+  ogDescription: 'Seed-Rankings und Shortlists für Freelancer-Software in der Schweiz.'
 })
 </script>
 
@@ -13,12 +30,24 @@ useSeoMeta({
   <UContainer class="py-12">
     <UPageHeader
       title="Bestenlisten"
-      description="Unsere ersten Ranking-Starts fuer Schweizer Freelancer-Software. Jede Liste ist bewusst redaktionell, transparent und bei offenen Punkten klar markiert."
+      description="Unsere ersten Ranking-Starts für Schweizer Freelancer-Software. Jede Liste ist bewusst redaktionell, transparent und bei offenen Punkten klar markiert."
     />
 
-    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+    <div class="mt-6 flex flex-wrap gap-2">
+      <UButton
+        v-for="cat in categories"
+        :key="cat"
+        :label="categoryLabels[cat] || cat"
+        :color="selectedCategory === cat ? 'primary' : 'neutral'"
+        :variant="selectedCategory === cat ? 'solid' : 'outline'"
+        size="sm"
+        @click="selectedCategory = cat"
+      />
+    </div>
+
+    <div class="mt-6 grid gap-6 lg:grid-cols-3">
       <NuxtLink
-        v-for="ranking in rankings || []"
+        v-for="ranking in filteredRankings"
         :key="ranking.path"
         :to="ranking.path"
         class="rounded-[1.75rem] border border-default bg-default/70 p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary/30"
@@ -33,7 +62,7 @@ useSeoMeta({
           {{ ranking.summary }}
         </p>
         <p class="mt-4 text-sm text-highlighted">
-          Top Pick: {{ ranking.topPick?.name || 'noch pruefen' }}
+          Top Pick: {{ ranking.topPick?.name || 'noch prüfen' }}
         </p>
       </NuxtLink>
     </div>

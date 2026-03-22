@@ -18,7 +18,7 @@ useHead({
 })
 
 useSeoMeta({
-  titleTemplate: '%s · Gruender Schweiz',
+  titleTemplate: '%s · Gründer Schweiz',
   twitterCard: 'summary_large_image'
 })
 </script>

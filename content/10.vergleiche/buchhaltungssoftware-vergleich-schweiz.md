@@ -61,7 +61,7 @@ Wenn du nur eine Frage mitnimmst, dann diese: Willst du Buchhaltung möglichst r
 
 ## Was wir bewusst offen lassen
 
-Bei mehreren Tools bleiben Preis- und Detailfragen bewusst als `noch pruefen` markiert, bis sie direkt an der Quelle sauber verifiziert sind. Das ist wichtiger als ein scheinbar glatter Vergleich ohne belastbare Basis.
+Bei mehreren Tools bleiben Preis- und Detailfragen bewusst als `noch prüfen` markiert, bis sie direkt an der Quelle sauber verifiziert sind. Das ist wichtiger als ein scheinbar glatter Vergleich ohne belastbare Basis.
 
 ## Verbindung zu den Einzelreviews
 

@@ -188,7 +188,7 @@ Das sind die Seiten mit der stärksten Kauf- und Vergleichsintention.
 
 - `/bestenlisten/rechnungssoftware-schweiz`
 - `/bestenlisten/buchhaltungssoftware-freiberufler`
-- `/bestenlisten/geschaeftskonto-freelancer-schweiz`
+- `/bestenlisten/geschäftskonto-freelancer-schweiz`
 - `/bestenlisten/zeiterfassung-schweiz`
 - `/vergleiche/bexio-vs-klara`
 - `/vergleiche/bexio-alternativen-schweiz`

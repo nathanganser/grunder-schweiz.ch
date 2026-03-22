@@ -81,7 +81,18 @@ export const collections = {
       disclosure_text: z.string().nonempty(),
       pros: z.array(z.string().nonempty()),
       cons: z.array(z.string().nonempty()),
-      features: z.array(z.string().nonempty())
+      features: z.array(z.string().nonempty()),
+      decision_questions: z.array(z.object({
+        question: z.string(),
+        yes_answer: z.string(),
+        no_answer: z.string()
+      })).optional(),
+      scores: z.object({
+        overall: z.number().min(1).max(10),
+        swiss_fit: z.number().min(1).max(10),
+        value: z.number().min(1).max(10),
+        usability: z.number().min(1).max(10)
+      }).optional()
     })
   }),
   methodology: defineCollection({

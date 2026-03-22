@@ -22,6 +22,21 @@ features:
   - Rechnungen und Offerten
   - Kontakte, offene Posten und Ausgabenmanagement
   - Schweizer QR-Rechnung und buchhaltungsnahe Prozesse
+decision_questions:
+  - question: Schreibst du mehr als 5 Rechnungen pro Monat?
+    yes_answer: bexio spart dir hier viel Zeit durch Automatisierung.
+    no_answer: Ein schlankeres Tool könnte ausreichen.
+  - question: Brauchst du Buchhaltungsnähe im gleichen System?
+    yes_answer: Genau dafür ist bexio gemacht.
+    no_answer: Ein reines Rechnungstool wäre günstiger.
+  - question: Arbeitest du mit Schweizer Kunden und QR-Rechnungen?
+    yes_answer: bexio ist hier einer der besten Fits.
+    no_answer: Internationale Tools könnten besser passen.
+scores:
+  overall: 8.5
+  swiss_fit: 9
+  value: 7.5
+  usability: 8
 ---
 
 bexio ist in der Schweiz einer der naheliegendsten Referenzpunkte, wenn Gründer eine Software suchen, die mehr kann als nur Rechnungen schreiben. Das Produkt richtet sich sichtbar an kleine Unternehmen und Selbständige, die Offerten, Rechnungen, Kontakte, Ausgaben und Teile der Buchhaltung nicht in getrennten Systemen pflegen wollen.

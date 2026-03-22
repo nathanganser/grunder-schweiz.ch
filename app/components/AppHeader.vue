@@ -1,6 +1,44 @@
 <script setup lang="ts">
 const route = useRoute()
 
+const searchOpen = ref(false)
+const searchQuery = ref('')
+
+const { data: allArticles } = await useAsyncData('search-articles', () => queryCollection('articles').all())
+const { data: allRankings } = await useAsyncData('search-rankings', () => queryCollection('rankings').all())
+const { data: allReviews } = await useAsyncData('search-reviews', () => queryCollection('reviews').all())
+const { data: allComparisons } = await useAsyncData('search-comparisons', () => queryCollection('comparisons').all())
+
+const searchResults = computed(() => {
+  const q = searchQuery.value.toLowerCase().trim()
+  if (!q || q.length < 2) return []
+
+  const results: Array<{ title: string, description: string, path: string, type: string }> = []
+
+  for (const article of allArticles.value || []) {
+    if (article.title?.toLowerCase().includes(q) || article.description?.toLowerCase().includes(q)) {
+      results.push({ title: article.title, description: article.description, path: article.path, type: 'Ratgeber' })
+    }
+  }
+  for (const ranking of allRankings.value || []) {
+    if (ranking.title?.toLowerCase().includes(q) || ranking.description?.toLowerCase().includes(q)) {
+      results.push({ title: ranking.title, description: ranking.description, path: ranking.path, type: 'Bestenliste' })
+    }
+  }
+  for (const review of allReviews.value || []) {
+    if (review.title?.toLowerCase().includes(q) || review.tool_name?.toLowerCase().includes(q) || review.description?.toLowerCase().includes(q)) {
+      results.push({ title: review.title, description: review.description, path: review.path, type: 'Review' })
+    }
+  }
+  for (const comparison of allComparisons.value || []) {
+    if (comparison.title?.toLowerCase().includes(q) || comparison.description?.toLowerCase().includes(q)) {
+      results.push({ title: comparison.title, description: comparison.description, path: comparison.path, type: 'Vergleich' })
+    }
+  }
+
+  return results.slice(0, 8)
+})
+
 const items = computed(() => [{
   label: 'Kategorien',
   to: '/kategorien',
@@ -42,7 +80,7 @@ const items = computed(() => [{
             Gründer Schweiz
           </span>
           <span class="text-xs text-muted">
-            Repository und Guide fuer Schweizer Freelancer-Software
+            Repository und Guide für Schweizer Freelancer-Software
           </span>
         </div>
       </NuxtLink>
@@ -55,6 +93,7 @@ const items = computed(() => [{
     />
 
     <template #right>
+      <UButton icon="i-lucide-search" color="neutral" variant="ghost" @click="searchOpen = true" />
       <UColorModeButton />
     </template>
 
@@ -64,7 +103,7 @@ const items = computed(() => [{
           Redaktioneller Einstieg
         </p>
         <p class="mt-1 text-sm text-muted">
-          Kategorien, Guides, Reviews und transparente Einordnung fuer Schweizer Selbststaendige.
+          Kategorien, Guides, Reviews und transparente Einordnung für Schweizer Selbstständige.
         </p>
       </div>
 
@@ -75,4 +114,42 @@ const items = computed(() => [{
       />
     </template>
   </UHeader>
+
+  <UModal v-model:open="searchOpen" :ui="{ width: 'sm:max-w-xl' }">
+    <template #content>
+      <div class="p-4">
+        <div class="relative">
+          <UIcon name="i-lucide-search" class="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted" />
+          <input
+            v-model="searchQuery"
+            type="text"
+            placeholder="Tool, Thema oder Ratgeber suchen..."
+            class="w-full rounded-xl border border-default bg-default py-3 pl-10 pr-4 text-sm text-highlighted placeholder:text-muted focus:border-primary focus:outline-none"
+            autofocus
+          />
+        </div>
+        <div v-if="searchResults.length" class="mt-4 max-h-80 space-y-1 overflow-y-auto">
+          <NuxtLink
+            v-for="result in searchResults"
+            :key="result.path"
+            :to="result.path"
+            class="block rounded-xl px-3 py-2.5 transition hover:bg-elevated/80"
+            @click="searchOpen = false; searchQuery = ''"
+          >
+            <div class="flex items-center gap-2">
+              <UBadge :label="result.type" color="neutral" variant="subtle" size="xs" />
+              <p class="text-sm font-medium text-highlighted truncate">{{ result.title }}</p>
+            </div>
+            <p class="mt-1 text-xs text-muted truncate">{{ result.description }}</p>
+          </NuxtLink>
+        </div>
+        <div v-else-if="searchQuery.length >= 2" class="mt-4 py-8 text-center text-sm text-muted">
+          Keine Ergebnisse für "{{ searchQuery }}"
+        </div>
+        <div v-else class="mt-4 py-8 text-center text-sm text-muted">
+          Mindestens 2 Zeichen eingeben...
+        </div>
+      </div>
+    </template>
+  </UModal>
 </template>

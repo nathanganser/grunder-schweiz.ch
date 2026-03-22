@@ -19,6 +19,11 @@ function reviewPathFor(slug: string) {
   return linkedReviews.value.find(review => review.path?.endsWith(`/${slug}`))?.path
 }
 
+const { data: allArticles } = await useAsyncData(`${route.path}-articles`, () => queryCollection('articles').all())
+const relatedArticles = computed(() => {
+  return (allArticles.value || []).slice(0, 3)
+})
+
 useSeoMeta({
   title: ranking.value.title,
   ogTitle: ranking.value.title,
@@ -58,7 +63,7 @@ useSeoMeta({
             {{ ranking.topPick.verdict }}
           </p>
           <div class="mt-4 space-y-2 text-sm text-muted">
-            <p><span class="text-highlighted">Best fuer:</span> {{ ranking.topPick.bestFor }}</p>
+            <p><span class="text-highlighted">Best für:</span> {{ ranking.topPick.bestFor }}</p>
             <p><span class="text-highlighted">Preisbild:</span> {{ ranking.topPick.priceSummary }}</p>
             <p><span class="text-highlighted">Schweizer Fit:</span> {{ ranking.topPick.swissFit }}</p>
           </div>
@@ -118,6 +123,46 @@ useSeoMeta({
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="rounded-[1.75rem] border border-default bg-default/70 p-6 overflow-x-auto">
+          <p class="text-sm font-semibold text-highlighted mb-4">
+            Vergleich auf einen Blick
+          </p>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-default">
+                <th class="pb-3 pr-4 text-left font-medium text-muted">Tool</th>
+                <th class="pb-3 px-4 text-left font-medium text-muted">Beste für</th>
+                <th class="pb-3 px-4 text-left font-medium text-muted">Preisbild</th>
+                <th class="pb-3 pl-4 text-left font-medium text-muted">Schweizer Fit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-default/50 bg-primary/5">
+                <td class="py-3 pr-4">
+                  <div class="flex items-center gap-2">
+                    <UIcon name="i-lucide-trophy" class="size-4 text-primary" />
+                    <span class="font-semibold text-highlighted">{{ ranking.topPick.name }}</span>
+                  </div>
+                </td>
+                <td class="py-3 px-4 text-muted">{{ ranking.topPick.bestFor }}</td>
+                <td class="py-3 px-4 text-muted">{{ ranking.topPick.priceSummary }}</td>
+                <td class="py-3 pl-4 text-muted">{{ ranking.topPick.swissFit }}</td>
+              </tr>
+              <tr
+                v-for="tool in ranking.runnerUps"
+                :key="tool.slug"
+                class="border-b border-default/50"
+              >
+                <td class="py-3 pr-4 font-medium text-highlighted">{{ tool.name }}</td>
+                <td class="py-3 px-4 text-muted">{{ tool.bestFor }}</td>
+                <td class="py-3 px-4 text-muted">{{ tool.priceSummary }}</td>
+                <td class="py-3 pl-4 text-muted">{{ tool.swissFit }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <div class="rounded-[1.75rem] border border-default bg-default/70 p-6">
@@ -184,6 +229,21 @@ useSeoMeta({
               <p class="mt-1 text-sm text-muted">
                 {{ review.best_for }}
               </p>
+            </NuxtLink>
+          </div>
+        </div>
+
+        <div v-if="relatedArticles.length" class="rounded-[1.75rem] border border-default bg-default/70 p-6">
+          <p class="text-sm font-semibold text-highlighted">Passende Ratgeber</p>
+          <div class="mt-4 space-y-3">
+            <NuxtLink
+              v-for="article in relatedArticles"
+              :key="article.path"
+              :to="article.path"
+              class="block rounded-xl border border-default bg-default px-4 py-3 transition hover:border-primary/30"
+            >
+              <p class="text-xs uppercase tracking-[0.22em] text-muted">{{ article.badge?.label }}</p>
+              <p class="mt-1 text-sm font-medium text-highlighted">{{ article.title }}</p>
             </NuxtLink>
           </div>
         </div>

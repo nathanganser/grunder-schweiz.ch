@@ -22,6 +22,21 @@ features:
   - Buchhaltungsnahe Positionierung
   - Service-Komponente
   - Schweizer Ausrichtung
+decision_questions:
+  - question: Möchtest du Buchhaltung teilweise delegieren?
+    yes_answer: accounto ist genau für diesen Mittelweg gebaut.
+    no_answer: Ein reines DIY-Tool ist dann günstiger.
+  - question: Ist dir professionelle Begleitung wichtig?
+    yes_answer: accounto verbindet Software mit Betreuung.
+    no_answer: Reine Self-Service-Tools reichen wahrscheinlich.
+  - question: Hast du wenig Buchhaltungserfahrung?
+    yes_answer: Die geführte Betreuung hilft dir enorm.
+    no_answer: Du könntest mit einem günstigeren Tool selbst arbeiten.
+scores:
+  overall: 7.5
+  swiss_fit: 8
+  value: 7
+  usability: 8
 ---
 
 accounto ist besonders dann interessant, wenn ein reines Do-it-yourself-Tool zu wenig und klassische manuelle Betreuung zu viel wirkt. Für Gründer, die Buchhaltung ernst nehmen, aber nicht jede Buchungslogik selbst tragen möchten, ist das ein sinnvoller Mittelweg.

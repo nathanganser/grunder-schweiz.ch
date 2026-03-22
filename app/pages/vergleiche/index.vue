@@ -4,8 +4,8 @@ const { data: comparisons } = await useAsyncData('comparisons-index', () => quer
 useSeoMeta({
   title: 'Vergleiche',
   ogTitle: 'Vergleiche',
-  description: 'Direkte Vergleiche fuer Schweizer Selbststaendige, die Software nicht nach Werbetext, sondern nach Alltagstauglichkeit auswaehlen wollen.',
-  ogDescription: 'Direkte Vergleiche fuer Schweizer Selbststaendige, die Software nicht nach Werbetext, sondern nach Alltagstauglichkeit auswaehlen wollen.'
+  description: 'Direkte Vergleiche für Schweizer Selbstständige, die Software nicht nach Werbetext, sondern nach Alltagstauglichkeit auswählen wollen.',
+  ogDescription: 'Direkte Vergleiche für Schweizer Selbstständige, die Software nicht nach Werbetext, sondern nach Alltagstauglichkeit auswählen wollen.'
 })
 </script>
 
@@ -13,7 +13,7 @@ useSeoMeta({
   <UContainer class="py-12">
     <UPageHeader
       title="Vergleiche"
-      description="Direkte Gegenueberstellungen fuer Rechnungs-, Buchhaltungs- und Admin-Themen im Schweizer Freelancer-Alltag."
+      description="Direkte Gegenueberstellungen für Rechnungs-, Buchhaltungs- und Admin-Themen im Schweizer Freelancer-Alltag."
     >
       <template #headline>
         <UBadge

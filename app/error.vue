@@ -55,7 +55,7 @@ const links = [{
             Diese Seite existiert nicht oder wurde verschoben.
           </h1>
           <p class="mt-4 text-base leading-7 text-muted">
-            Wir bauen Gruender Schweiz gerade als Review- und Ranking-Portal fuer Schweizer Freelancer um. Ueber diese Einstiege findest du schnell zur aktuellen Struktur.
+            Wir bauen Gründer Schweiz gerade als Review- und Ranking-Portal für Schweizer Freelancer um. Über diese Einstiege findest du schnell zur aktuellen Struktur.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
             <UButton

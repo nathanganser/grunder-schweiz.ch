@@ -12,7 +12,7 @@ topPick:
   url: https://www.banana.ch/
   verdict: "Sehr interessant für Selbstständige, die Transparenz und Kontrolle in der Buchhaltung suchen."
   bestFor: "Nutzer mit eigener Struktur und dem Wunsch nach klarer Zahlenlogik."
-  priceSummary: "noch pruefen"
+  priceSummary: "noch prüfen"
   swissFit: "Schweizer Ursprung klar, Detailfit für einzelne Freelancer-Workflows je nach Setup prüfen."
 runnerUps:
   - name: bexio
@@ -21,7 +21,7 @@ runnerUps:
     url: https://www.bexio.com/
     verdict: "Starker Kandidat, wenn Buchhaltung nicht isoliert, sondern zusammen mit Rechnungen und Kontakten laufen soll."
     bestFor: "Allround-Administration in einem Tool."
-    priceSummary: "noch pruefen"
+    priceSummary: "noch prüfen"
     swissFit: "Schweizer KMU-Kontext klar sichtbar."
   - name: accounto
     slug: accounto
@@ -29,7 +29,7 @@ runnerUps:
     url: https://www.accounto.ch/
     verdict: "Spannend für Firmen, die Software und Buchhaltungsservice enger denken."
     bestFor: "Setups mit Wunsch nach mehr Begleitung oder Service-Anteil."
-    priceSummary: "noch pruefen"
+    priceSummary: "noch prüfen"
     swissFit: "Schweizer Positionierung vorhanden, Produktmodell im Detail noch prüfen."
   - name: KLARA
     slug: klara
@@ -37,7 +37,7 @@ runnerUps:
     url: https://www.klara.ch/
     verdict: "Relevant, wenn mehrere Admin-Themen in einer Plattform zusammenlaufen sollen."
     bestFor: "Kompakte Setups mit breiterer Administration."
-    priceSummary: "noch pruefen"
+    priceSummary: "noch prüfen"
     swissFit: "Schweizer Ausrichtung sichtbar, Detailtiefe je Modul noch prüfen."
 evaluationCriteria:
   - Nachvollziehbarkeit im Monatsablauf
@@ -80,4 +80,4 @@ Die zentrale Frage ist nicht, welches Tool am meisten verspricht, sondern welche
 Wer die Liste mit dem Praxisbedarf abgleichen will, sollte sie zusammen mit dem Vergleich lesen:
 
 - [Buchhaltungssoftware Vergleich Schweiz](/vergleiche/buchhaltungssoftware-vergleich-schweiz)
-- [MWST fuer Selbststaendige in der Schweiz einfach erklaert](/blog/mwst-selbststaendige-schweiz)
+- [MWST für Selbstständige in der Schweiz einfach erklärt](/blog/mwst-selbststaendige-schweiz)

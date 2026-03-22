@@ -22,6 +22,21 @@ features:
   - Administrative Plattform-Positionierung
   - Rechnungsnahe Prozesse
   - Schweizer Unternehmenskontext
+decision_questions:
+  - question: Suchst du eine Plattform für mehrere Admin-Themen?
+    yes_answer: KLARA bündelt vieles unter einem Dach.
+    no_answer: Spezialisierte Einzeltools sind oft schärfer.
+  - question: Ist dir ein günstiger Einstieg wichtiger als Tiefe?
+    yes_answer: KLARA bietet einen kompakten Start.
+    no_answer: Tools mit mehr Tiefe könnten besser passen.
+  - question: Brauchst du Lohnbuchhaltung oder HR-Funktionen?
+    yes_answer: KLARA deckt diese Bereiche mit ab.
+    no_answer: Dann reicht oft ein fokussierteres Tool.
+scores:
+  overall: 7
+  swiss_fit: 7.5
+  value: 7
+  usability: 7.5
 ---
 
 KLARA ist vor allem für Gründer interessant, die Business-Software nicht als Einzelfunktion betrachten. Statt nur Rechnungen zu lösen, will die Plattform mehrere administrative Themen zusammenführen. Das ist attraktiv, wenn du bewusst zentralisieren möchtest. Es ist aber nicht automatisch der beste Weg für jeden Solo-Freelancer.
