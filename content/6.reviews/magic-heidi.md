@@ -1,6 +1,6 @@
 ---
 title: Magic Heidi Review für Schweizer Freelancer
-description: Magic Heidi Review Schweiz 2026: unsere aktuelle Top-Empfehlung für Freelancer, die QR-Rechnungen, einfache Buchhaltung und MWST ohne ERP-Overhead wollen.
+description: "Magic Heidi Review Schweiz 2026: unsere aktuelle Top-Empfehlung für Freelancer, die QR-Rechnungen, einfache Buchhaltung und MWST ohne ERP-Overhead wollen."
 tool_name: Magic Heidi
 vendor: Magic Heidi
 category: rechnungen

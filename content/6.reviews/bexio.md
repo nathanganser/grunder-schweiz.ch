@@ -1,6 +1,6 @@
 ---
 title: bexio Review für Schweizer Freelancer
-description: bexio Review Schweiz 2026: Kosten, Funktionen, Vor- und Nachteile für Gründer, Freelancer und kleine Unternehmen im Schweizer Alltag.
+description: "bexio Review Schweiz 2026: Kosten, Funktionen, Vor- und Nachteile für Gründer, Freelancer und kleine Unternehmen im Schweizer Alltag."
 tool_name: bexio
 vendor: bexio AG
 category: rechnungen

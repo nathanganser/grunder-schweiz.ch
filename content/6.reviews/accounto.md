@@ -1,6 +1,6 @@
 ---
 title: accounto Review für kleine Schweizer Setups
-description: accounto Review Schweiz 2026: interessant für Gründer, die Software und buchhaltungsnahe Begleitung enger zusammendenken möchten.
+description: "accounto Review Schweiz 2026: interessant für Gründer, die Software und buchhaltungsnahe Begleitung enger zusammendenken möchten."
 tool_name: accounto
 vendor: accounto AG
 category: buchhaltung

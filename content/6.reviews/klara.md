@@ -1,6 +1,6 @@
 ---
 title: KLARA Review für Schweizer Selbständige
-description: KLARA Review Schweiz 2026: Einordnung für Gründer, die Rechnungen und Administration in einer breiteren Plattform bündeln möchten.
+description: "KLARA Review Schweiz 2026: Einordnung für Gründer, die Rechnungen und Administration in einer breiteren Plattform bündeln möchten."
 tool_name: KLARA
 vendor: KLARA Business AG
 category: rechnungen

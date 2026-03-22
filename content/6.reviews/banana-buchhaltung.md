@@ -1,6 +1,6 @@
 ---
 title: Banana Buchhaltung Review für Freiberufler
-description: Banana Buchhaltung Review Schweiz 2026: starke Wahl für Selbständige mit Fokus auf Kontrolle, MWST und sauberer Buchhaltungslogik.
+description: "Banana Buchhaltung Review Schweiz 2026: starke Wahl für Selbständige mit Fokus auf Kontrolle, MWST und sauberer Buchhaltungslogik."
 tool_name: Banana Buchhaltung
 vendor: Banana.ch SA
 category: buchhaltung

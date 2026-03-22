@@ -1,6 +1,6 @@
 ---
 title: bexio vs KLARA
-description: bexio vs KLARA für Schweizer Gründer: direkter Vergleich von Fokus, Stärken, Komplexität und dem passenden Einsatz im Alltag.
+description: "bexio vs KLARA für Schweizer Gründer: direkter Vergleich von Fokus, Stärken, Komplexität und dem passenden Einsatz im Alltag."
 compared_tools:
   - bexio
   - KLARA
