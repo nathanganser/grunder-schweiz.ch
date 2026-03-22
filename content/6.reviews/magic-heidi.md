@@ -53,7 +53,7 @@ Drei Dinge machen das Produkt besonders stark:
 - Rechnungen, Ausgaben und einfache Buchhaltung werden in einem schlanken Setup zusammengehalten.
 - Das Preis-Leistungs-Verhältnis bleibt auch für sehr kleine Setups nachvollziehbar.
 
-Laut Anbieter unterstützt Magic Heidi QR-Rechnungen, strukturierte Adressen, mehrere Sprachen, CHF und EUR, MWST-Verwaltung, KI-gestuetzten Belegscan sowie Bank-Statement-Import. Genau diese Kombination trifft den Alltag vieler Einzelfirmen erstaunlich präzise.
+Laut Anbieter unterstützt Magic Heidi QR-Rechnungen, strukturierte Adressen, mehrere Sprachen, CHF und EUR, MWST-Verwaltung, KI-gestützten Belegscan sowie Bank-Statement-Import. Genau diese Kombination trifft den Alltag vieler Einzelfirmen erstaunlich präzise.
 
 ## Preisbild und Einstieg
 

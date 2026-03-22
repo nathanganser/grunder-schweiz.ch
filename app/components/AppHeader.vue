@@ -111,7 +111,7 @@ const items = computed(() => [{
           Redaktionelle Empfehlung
         </p>
         <p class="mt-1 text-sm text-muted">
-          Wir ranken eigenstaendig. Aktuell führt Magic Heidi bei Rechnungen und leichter Buchhaltung für Schweizer Freelancer.
+          Wir ranken eigenständig. Aktuell führt Magic Heidi bei Rechnungen und leichter Buchhaltung für Schweizer Freelancer.
         </p>
       </div>
 

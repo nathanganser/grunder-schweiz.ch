@@ -43,7 +43,7 @@ export const collections = {
         src: z.string().nonempty().editor({ input: 'media' })
       }),
       authors: z.array(authorSchema),
-      date: z.date(),
+      date: z.string(),
       badge: z.object({
         label: z.string().nonempty()
       })
@@ -76,7 +76,7 @@ export const collections = {
       pricing_summary: z.string().nonempty(),
       best_for: z.string().nonempty(),
       swiss_fit: z.string().nonempty(),
-      last_reviewed: z.date(),
+      last_reviewed: z.string(),
       affiliate_url: z.string().nonempty(),
       disclosure_text: z.string().nonempty(),
       pros: z.array(z.string().nonempty()),
@@ -101,7 +101,7 @@ export const collections = {
     schema: z.object({
       title: z.string().nonempty(),
       description: z.string().nonempty(),
-      lastUpdated: z.date(),
+      lastUpdated: z.string(),
       disclosureSummary: z.string().nonempty(),
       criteria: z.array(z.string().nonempty()),
       sources: z.array(z.object({

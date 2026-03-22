@@ -104,7 +104,7 @@ useSeoMeta({
           </h2>
           <div class="mt-4 space-y-4">
             <div
-              v-for="(score, key) in { 'Gesamt': review.scores.overall, 'Schweizer Fit': review.scores.swiss_fit, 'Preis-Leistung': review.scores.value, 'Bedienbarkeit': review.scores.usability }"
+              v-for="(score, key) in { 'Gesamt': Number(review.scores.overall), 'Schweizer Fit': Number(review.scores.swiss_fit), 'Preis-Leistung': Number(review.scores.value), 'Bedienbarkeit': Number(review.scores.usability) }"
               :key="key"
             >
               <div class="flex items-center justify-between text-sm">
@@ -166,7 +166,7 @@ useSeoMeta({
             Ist {{ review.tool_name }} das Richtige für dich?
           </h2>
           <p class="mt-2 text-sm text-muted">
-            Beantworte diese Fragen für eine schnelle Einschaetzung.
+            Beantworte diese Fragen für eine schnelle Einschätzung.
           </p>
           <div class="mt-5 space-y-3">
             <div

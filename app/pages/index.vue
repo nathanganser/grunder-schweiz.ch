@@ -1,47 +1,43 @@
 <script setup lang="ts">
+const { data: categoriesPage } = await useAsyncData('home-categories', () => queryCollection('categories').first())
 const { data: rankings } = await useAsyncData('home-rankings', () => queryCollection('rankings').all())
 const { data: reviews } = await useAsyncData('home-reviews', () => queryCollection('reviews').all())
+const { data: comparisons } = await useAsyncData('home-comparisons', () => queryCollection('comparisons').all())
 const { data: articles } = await useAsyncData('home-articles', () => queryCollection('articles').order('date', 'DESC').all())
 
-const magicHeidiReview = computed(() => {
-  return (reviews.value || []).find(review => review.path?.endsWith('/magic-heidi'))
-})
+const categoryLabels: Record<string, string> = {
+  rechnungen: 'Rechnungssoftware',
+  buchhaltung: 'Buchhaltung',
+  banking: 'Geschäftskonten',
+  zeiterfassung: 'Zeiterfassung'
+}
 
-const invoiceRanking = computed(() => {
-  return (rankings.value || []).find(ranking => ranking.path?.endsWith('/1-rechnungssoftware-schweiz'))
-    || (rankings.value || []).find(ranking => ranking.path?.endsWith('/rechnungssoftware-schweiz'))
-})
-
-const bookkeepingRanking = computed(() => {
-  return (rankings.value || []).find(ranking => ranking.path?.endsWith('/2-buchhaltungssoftware-freiberufler'))
-    || (rankings.value || []).find(ranking => ranking.path?.endsWith('/buchhaltungssoftware-schweiz'))
-})
-
-const featuredAlternatives = computed(() => {
-  const preferredOrder = ['bexio', 'banana-buchhaltung', 'klara', 'accounto']
-
-  return preferredOrder
-    .map(slug => (reviews.value || []).find(review => review.path?.endsWith(`/${slug}`)))
-    .filter(Boolean)
-    .slice(0, 4)
+const categoryRankingMap = computed(() => {
+  const map: Record<string, { path: string }> = {}
+  for (const ranking of rankings.value || []) {
+    if (ranking.category) {
+      map[ranking.category] = ranking
+    }
+  }
+  return map
 })
 
 const featuredArticles = computed(() => {
   const preferredSlugs = [
     '/blog/rechnung-schreiben-schweiz',
-    '/blog/qr-rechnung-erstellen-schweiz',
-    '/blog/mwst-anmeldung-schweiz'
+    '/blog/buchhaltung-einzelfirma-schweiz',
+    '/blog/mwst-schweiz',
+    '/blog/geschaeftskonto-freelancer-schweiz',
+    '/blog/firma-gruenden-schweiz-kosten',
+    '/blog/all-in-one-vs-best-of-breed'
   ]
 
   const selected = preferredSlugs
-    .map(path => (articles.value || []).find(article => article.path === path))
+    .map(path => (articles.value || []).find(a => a.path === path))
     .filter(Boolean)
 
-  if (selected.length >= 3) {
-    return selected
-  }
-
-  return (articles.value || []).slice(0, 3)
+  if (selected.length >= 6) return selected
+  return (articles.value || []).slice(0, 6)
 })
 
 useHead({
@@ -49,304 +45,314 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Gründer Schweiz | Magic Heidi als beste Rechnungssoftware für Freelancer',
-  ogTitle: 'Gründer Schweiz | Magic Heidi als beste Rechnungssoftware für Freelancer',
-  description: 'Rationale, quellenbasierte Empfehlungen für Schweizer Freelancer: Magic Heidi führt aktuell bei Rechnungen und leichter Buchhaltung, Alternativen bleiben transparent eingeordnet.',
-  ogDescription: 'Rationale, quellenbasierte Empfehlungen für Schweizer Freelancer: Magic Heidi führt aktuell bei Rechnungen und leichter Buchhaltung, Alternativen bleiben transparent eingeordnet.',
+  title: 'Gründer Schweiz | Software-Vergleiche für Freelancer und Selbstständige',
+  ogTitle: 'Gründer Schweiz | Software-Vergleiche für Freelancer und Selbstständige',
+  description: 'Unabhängige Vergleiche und Bestenlisten für Schweizer Business-Software: Rechnungen, Buchhaltung, Geschäftskonten und Zeiterfassung. Redaktionell geprüft und transparent bewertet.',
+  ogDescription: 'Unabhängige Vergleiche und Bestenlisten für Schweizer Business-Software: Rechnungen, Buchhaltung, Geschäftskonten und Zeiterfassung. Redaktionell geprüft und transparent bewertet.',
   twitterCard: 'summary_large_image'
 })
 </script>
 
 <template>
   <UContainer class="py-10 lg:py-12">
-    <div class="grid gap-8 lg:grid-cols-[0.72fr_0.28fr]">
-      <div class="space-y-8">
-        <section class="rounded-[1.75rem] border border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-8">
-          <UBadge
-            label="Redaktionelles Urteil"
-            color="primary"
-            variant="subtle"
+    <div class="space-y-8">
+      <!-- Hero: Portal-Intro -->
+      <section class="rounded-[1.75rem] border border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-8">
+        <UBadge
+          label="Redaktionelles Portal"
+          color="primary"
+          variant="subtle"
+        />
+        <h1 class="mt-4 font-display text-3xl font-bold tracking-tight text-highlighted lg:text-5xl">
+          Die besten Tools für Schweizer Gründer und Freelancer
+        </h1>
+        <p class="mt-4 max-w-3xl text-base leading-7 text-muted">
+          Unabhängige Bestenlisten, Reviews und Ratgeber für Business-Software in der Schweiz.
+          Wir vergleichen Rechnungssoftware, Buchhaltung, Geschäftskonten und Zeiterfassung
+          nach klaren Kriterien — transparent, redaktionell und mit Schweizer Fokus.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <UButton
+            to="/bestenlisten"
+            label="Bestenlisten ansehen"
+            size="lg"
           />
-          <h1 class="mt-4 font-display text-3xl font-bold tracking-tight text-highlighted lg:text-5xl">
-            Magic Heidi ist aktuell die beste Software für Schweizer Freelancer
-          </h1>
-          <p class="mt-4 max-w-3xl text-base leading-7 text-muted">
-            Nicht als Marketing-Slogan, sondern als Ergebnis unserer aktuellen Kriterien: Schweizer Fit, QR-Rechnung, MWST, Ausgabenfluss, Bedienbarkeit und Preis-Leistung. Für einfache bis mittlere Freelancer-Setups führt Magic Heidi derzeit vor den breiteren Alternativen.
-          </p>
+          <UButton
+            to="/kategorien"
+            label="Alle Kategorien"
+            color="neutral"
+            variant="outline"
+            size="lg"
+          />
+          <UButton
+            to="/methodik"
+            label="Unsere Methodik"
+            color="neutral"
+            variant="ghost"
+            size="lg"
+          />
+        </div>
+      </section>
 
-          <div class="mt-6 flex flex-wrap gap-3">
-            <UButton
-              :to="magicHeidiReview?.path || '/reviews'"
-              label="Zum Magic-Heidi-Review"
-              size="lg"
-            />
-            <UButton
-              :to="invoiceRanking?.path || '/bestenlisten'"
-              label="Rechnungssoftware ansehen"
-              color="neutral"
-              variant="outline"
-              size="lg"
-            />
-            <UButton
-              :to="bookkeepingRanking?.path || '/bestenlisten'"
-              label="Buchhaltung vergleichen"
-              color="neutral"
-              variant="ghost"
-              size="lg"
-            />
-          </div>
-
-          <div class="mt-8 grid gap-3 md:grid-cols-3">
-            <div class="rounded-2xl border border-default bg-default/80 p-4">
-              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted">
-                Schweizer Fit
-              </p>
-              <p class="mt-2 text-sm leading-6 text-muted">
-                QR-Rechnung, strukturierte Adressen, CHF/EUR und mehrsprachige Rechnungen sind laut Anbieter direkt eingebaut.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-default bg-default/80 p-4">
-              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted">
-                Leichte Buchhaltung
-              </p>
-              <p class="mt-2 text-sm leading-6 text-muted">
-                Ausgaben, KI-Belegscan, Bankimport und MWST decken die typischen Reibungspunkte kleiner Setups ab.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-default bg-default/80 p-4">
-              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted">
-                Preis-Leistung
-              </p>
-              <p class="mt-2 text-sm leading-6 text-muted">
-                Gratis-Test, Jahresplan CHF 24.99 pro Monat und Monatsplan CHF 30 laut Anbieter.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="rounded-[1.75rem] border border-default bg-default/70 p-6 shadow-sm">
-          <div class="flex items-center justify-between gap-4">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted">
-                Kernseiten
-              </p>
-              <h2 class="mt-2 text-2xl font-semibold tracking-tight text-highlighted">
-                Die kürzeste Entscheidungsstrecke
-              </h2>
-            </div>
-            <UButton
-              to="/reviews"
-              label="Alle Reviews"
-              color="neutral"
-              variant="outline"
-            />
-          </div>
-
-          <div class="mt-6 grid gap-4 md:grid-cols-3">
-            <NuxtLink
-              :to="magicHeidiReview?.path || '/reviews'"
-              class="rounded-2xl border border-primary/20 bg-primary/5 p-5 transition hover:border-primary/40"
-            >
-              <p class="text-xs uppercase tracking-[0.22em] text-muted">
-                Top Review
-              </p>
-              <h3 class="mt-2 text-lg font-semibold text-highlighted">
-                {{ magicHeidiReview?.title || 'Magic Heidi Review' }}
-              </h3>
-              <p class="mt-2 text-sm leading-6 text-muted">
-                Unsere aktuelle Standardempfehlung für Schweizer Freelancer.
-              </p>
-            </NuxtLink>
-
-            <NuxtLink
-              :to="invoiceRanking?.path || '/bestenlisten'"
-              class="rounded-2xl border border-default bg-default p-5 transition hover:border-primary/30"
-            >
-              <p class="text-xs uppercase tracking-[0.22em] text-muted">
-                Ranking
-              </p>
-              <h3 class="mt-2 text-lg font-semibold text-highlighted">
-                {{ invoiceRanking?.title || 'Beste Rechnungssoftware' }}
-              </h3>
-              <p class="mt-2 text-sm leading-6 text-muted">
-                Magic Heidi gegen bexio, KLARA und Banana im direkten Freelancer-Kontext.
-              </p>
-            </NuxtLink>
-
-            <NuxtLink
-              :to="bookkeepingRanking?.path || '/bestenlisten'"
-              class="rounded-2xl border border-default bg-default p-5 transition hover:border-primary/30"
-            >
-              <p class="text-xs uppercase tracking-[0.22em] text-muted">
-                Ranking
-              </p>
-              <h3 class="mt-2 text-lg font-semibold text-highlighted">
-                {{ bookkeepingRanking?.title || 'Beste Buchhaltungssoftware' }}
-              </h3>
-              <p class="mt-2 text-sm leading-6 text-muted">
-                Magic Heidi als Default für leichte Buchhaltung, Alternativen für tiefere oder breitere Setups.
-              </p>
-            </NuxtLink>
-          </div>
-        </section>
-
-        <section class="rounded-[1.75rem] border border-default bg-default/70 p-6 shadow-sm">
-          <div class="flex items-center justify-between gap-4">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted">
-                Alternativen
-              </p>
-              <h2 class="mt-2 text-2xl font-semibold tracking-tight text-highlighted">
-                Wann ein anderes Tool besser passt
-              </h2>
-            </div>
-          </div>
-
-          <div class="mt-6 grid gap-4 md:grid-cols-2">
-            <NuxtLink
-              v-for="review in featuredAlternatives"
-              :key="review?.path"
-              :to="review?.path"
-              class="rounded-2xl border border-default bg-default p-4 transition hover:border-primary/30"
-            >
-              <div class="flex items-center justify-between gap-3">
-                <p class="font-medium text-highlighted">
-                  {{ review?.tool_name }}
-                </p>
-                <span class="text-xs uppercase tracking-[0.22em] text-muted">
-                  Alternative
-                </span>
-              </div>
-              <p class="mt-2 text-sm leading-6 text-muted">
-                {{ review?.best_for }}
-              </p>
-            </NuxtLink>
-          </div>
-        </section>
-      </div>
-
-      <div class="space-y-6">
-        <section class="rounded-[1.75rem] border border-default bg-default/70 p-5 shadow-sm">
-          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted">
-            Bewertungslogik
-          </p>
-          <div class="mt-4 space-y-3 text-sm leading-6 text-muted">
-            <p>Wir ranken nicht nach Lautstärke, sondern nach Schweizer Fit, QR-Rechnung, MWST, Bedienbarkeit, Export und Preis-Leistung.</p>
-            <p>Unabhängig heisst hier nicht neutral um jeden Preis. Wenn die Kriterien klar auf einen Gewinner zeigen, sagen wir das.</p>
-            <p>Bei Magic Heidi stützen sich die Produktfakten primär auf offizielle Anbieterquellen und Schweizer Standards von SIX und ESTV.</p>
-          </div>
-        </section>
-
-        <section class="rounded-[1.75rem] border border-default bg-default/70 p-5 shadow-sm">
-          <div class="flex items-center justify-between gap-4">
+      <!-- Software-Kategorien -->
+      <section>
+        <div class="flex items-center justify-between gap-4">
+          <div>
             <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted">
-              Quellenbasis
+              Software-Bereiche
             </p>
-            <UButton
-              to="/methodik"
-              label="Methodik"
-              color="neutral"
-              variant="ghost"
-            />
+            <h2 class="mt-2 text-2xl font-semibold tracking-tight text-highlighted">
+              Vier Kategorien, vier Bestenlisten
+            </h2>
           </div>
-          <div class="mt-4 flex flex-col gap-3">
-            <UButton
-              to="https://magicheidi.ch/de/web"
-              label="Magic Heidi Web"
-              target="_blank"
-              color="neutral"
-              variant="outline"
-              trailing-icon="i-lucide-arrow-up-right"
-              block
-            />
-            <UButton
-              to="https://magicheidi.ch/features-list"
-              label="Magic Heidi Features"
-              target="_blank"
-              color="neutral"
-              variant="outline"
-              trailing-icon="i-lucide-arrow-up-right"
-              block
-            />
-            <UButton
-              to="https://www.six-group.com/dam/download/banking-services/standardization/qr-bill/factsheet-qr-bill-transition-period-erp-de.pdf"
-              label="SIX QR-Rechnung"
-              target="_blank"
-              color="neutral"
-              variant="outline"
-              trailing-icon="i-lucide-arrow-up-right"
-              block
-            />
-            <UButton
-              to="https://www.estv.admin.ch/de/mwst-anderungen-ab-1-januar-2025"
-              label="ESTV MWST"
-              target="_blank"
-              color="neutral"
-              variant="outline"
-              trailing-icon="i-lucide-arrow-up-right"
-              block
-            />
-          </div>
-        </section>
+          <UButton
+            to="/kategorien"
+            label="Alle Kategorien"
+            color="neutral"
+            variant="outline"
+          />
+        </div>
 
-        <section class="rounded-[1.75rem] border border-default bg-default/70 p-5 shadow-sm">
-          <div class="flex items-center justify-between gap-4">
+        <div class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <NuxtLink
+            v-for="category in categoriesPage?.items || []"
+            :key="category.slug"
+            :to="categoryRankingMap[category.slug]?.path || '/bestenlisten'"
+            class="rounded-[1.75rem] border border-default bg-default/70 p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary/30"
+          >
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary">
+              <UIcon
+                :name="category.icon"
+                class="size-5"
+              />
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-highlighted">
+              {{ category.title }}
+            </h3>
+            <p class="mt-2 text-sm leading-6 text-muted">
+              {{ category.intro }}
+            </p>
+            <p class="mt-3 text-xs text-muted">
+              {{ category.audience }}
+            </p>
+          </NuxtLink>
+        </div>
+      </section>
+
+      <!-- Bestenlisten -->
+      <section class="rounded-[1.75rem] border border-default bg-default/70 p-6 shadow-sm">
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted">
+              Bestenlisten
+            </p>
+            <h2 class="mt-2 text-2xl font-semibold tracking-tight text-highlighted">
+              Aktuelle Top-Empfehlungen
+            </h2>
+          </div>
+          <UButton
+            to="/bestenlisten"
+            label="Alle Bestenlisten"
+            color="neutral"
+            variant="outline"
+          />
+        </div>
+
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <NuxtLink
+            v-for="ranking in rankings || []"
+            :key="ranking.path"
+            :to="ranking.path"
+            class="rounded-2xl border border-default bg-default p-5 transition hover:border-primary/30"
+          >
+            <p class="text-xs uppercase tracking-[0.22em] text-muted">
+              {{ categoryLabels[ranking.category] || ranking.category }}
+            </p>
+            <h3 class="mt-2 text-lg font-semibold text-highlighted">
+              {{ ranking.title }}
+            </h3>
+            <p class="mt-2 text-sm leading-6 text-muted">
+              {{ ranking.summary }}
+            </p>
+            <p class="mt-3 text-sm font-medium text-primary">
+              Top Pick: {{ ranking.topPick?.name }}
+            </p>
+          </NuxtLink>
+        </div>
+      </section>
+
+      <!-- Vergleiche -->
+      <section
+        v-if="comparisons?.length"
+        class="rounded-[1.75rem] border border-default bg-default/70 p-6 shadow-sm"
+      >
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted">
+              Vergleiche
+            </p>
+            <h2 class="mt-2 text-2xl font-semibold tracking-tight text-highlighted">
+              Software direkt gegenübergestellt
+            </h2>
+          </div>
+          <UButton
+            to="/vergleiche"
+            label="Alle Vergleiche"
+            color="neutral"
+            variant="outline"
+          />
+        </div>
+
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <NuxtLink
+            v-for="comparison in comparisons"
+            :key="comparison.path"
+            :to="comparison.path"
+            class="rounded-2xl border border-default bg-default p-5 transition hover:border-primary/30"
+          >
+            <div class="flex flex-wrap gap-1.5">
+              <UBadge
+                v-for="tool in comparison.compared_tools?.slice(0, 3)"
+                :key="tool"
+                :label="tool"
+                color="neutral"
+                variant="subtle"
+                size="xs"
+              />
+            </div>
+            <h3 class="mt-3 text-base font-semibold text-highlighted">
+              {{ comparison.title }}
+            </h3>
+            <p class="mt-2 text-sm leading-6 text-muted line-clamp-2">
+              {{ comparison.description }}
+            </p>
+          </NuxtLink>
+        </div>
+      </section>
+
+      <!-- Reviews -->
+      <section class="rounded-[1.75rem] border border-default bg-default/70 p-6 shadow-sm">
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted">
+              Reviews
+            </p>
+            <h2 class="mt-2 text-2xl font-semibold tracking-tight text-highlighted">
+              Einzelne Tools im Detail geprüft
+            </h2>
+          </div>
+          <UButton
+            to="/reviews"
+            label="Alle Reviews"
+            color="neutral"
+            variant="outline"
+          />
+        </div>
+
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <NuxtLink
+            v-for="review in reviews || []"
+            :key="review.path"
+            :to="review.path"
+            class="rounded-2xl border border-default bg-default p-4 transition hover:border-primary/30"
+          >
+            <p class="font-medium text-highlighted">
+              {{ review.tool_name }}
+            </p>
+            <p class="mt-1 text-xs uppercase tracking-[0.22em] text-muted">
+              {{ categoryLabels[review.category] || review.category }}
+            </p>
+            <p class="mt-2 text-sm leading-6 text-muted line-clamp-2">
+              {{ review.best_for }}
+            </p>
+            <div
+              v-if="review.scores"
+              class="mt-3"
+            >
+              <span class="inline-flex items-center justify-center rounded-lg bg-primary/10 px-2 py-0.5 text-xs font-bold text-primary">
+                {{ Number(review.scores.overall) }}/10
+              </span>
+            </div>
+          </NuxtLink>
+        </div>
+      </section>
+
+      <!-- Ratgeber -->
+      <section class="rounded-[1.75rem] border border-default bg-default/70 p-6 shadow-sm">
+        <div class="flex items-center justify-between gap-4">
+          <div>
             <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted">
               Ratgeber
             </p>
-            <UButton
-              to="/blog"
-              label="Alle Guides"
-              color="neutral"
-              variant="ghost"
-            />
+            <h2 class="mt-2 text-2xl font-semibold tracking-tight text-highlighted">
+              Wissen für den Schweizer Geschäftsalltag
+            </h2>
           </div>
-          <div class="mt-4 space-y-3">
-            <NuxtLink
-              v-for="article in featuredArticles"
-              :key="article?.path"
-              :to="article?.path"
-              class="block rounded-xl border border-default bg-default px-4 py-3 transition hover:border-primary/30"
-            >
-              <p class="text-xs uppercase tracking-[0.22em] text-muted">
-                {{ article?.badge?.label }}
-              </p>
-              <p class="mt-1 font-medium text-highlighted">
-                {{ article?.title }}
-              </p>
-            </NuxtLink>
-          </div>
-        </section>
+          <UButton
+            to="/blog"
+            label="Alle Ratgeber"
+            color="neutral"
+            variant="outline"
+          />
+        </div>
 
-        <section class="rounded-[1.75rem] border border-default bg-default/70 p-5 shadow-sm">
-          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted">
-            Transparenz
-          </p>
-          <div class="mt-4 flex flex-col gap-3">
+        <div class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <NuxtLink
+            v-for="article in featuredArticles"
+            :key="article?.path"
+            :to="article?.path"
+            class="rounded-2xl border border-default bg-default p-5 transition hover:border-primary/30"
+          >
+            <UBadge
+              :label="article?.badge?.label || 'Artikel'"
+              color="neutral"
+              variant="subtle"
+              size="xs"
+            />
+            <h3 class="mt-3 text-base font-semibold text-highlighted">
+              {{ article?.title }}
+            </h3>
+            <p class="mt-2 text-sm leading-6 text-muted line-clamp-2">
+              {{ article?.description }}
+            </p>
+          </NuxtLink>
+        </div>
+      </section>
+
+      <!-- Transparenz -->
+      <section class="rounded-[1.75rem] border border-default bg-default/70 p-6 shadow-sm">
+        <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-muted">
+              Transparenz
+            </p>
+            <p class="mt-2 max-w-2xl text-sm leading-6 text-muted">
+              Einige ausgehende Links sind Affiliate-Links. Unsere Kriterien und Rankings bleiben
+              davon getrennt. Wenn die Kriterien klar auf einen Gewinner zeigen, sagen wir das offen.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3">
             <UButton
               to="/legal/affiliate-disclosure"
               label="Affiliate-Hinweis"
               color="neutral"
               variant="outline"
-              block
             />
             <UButton
               to="/methodik"
               label="Methodik"
               color="neutral"
               variant="outline"
-              block
             />
             <UButton
               to="/legal/datenschutz"
               label="Datenschutz"
               color="neutral"
               variant="outline"
-              block
             />
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   </UContainer>
 </template>
